@@ -1,0 +1,40 @@
+$colorFore1: #FFFFFF;
+$colorFore2: #DDDDDD;
+$colorFore3: #BBBBBB;
+$colorFore4: #999999;
+$colorFore5: #777777;
+$colorBack1: #333333;
+$colorBack2: #222222;
+$colorBack3: #111111;
+$colorBack4: #000000;
+$colorHigh1: #FF802A;
+$colorHigh2: #FF6700;
+$colorHigh3: #FF6700;
+
+.clean
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.vynil-main-body
+{
+    overflow-y: hidden;
+    font-family: Helvetica, sans-serif;
+    background-color: $colorBack4;
+}
+
+.vynil-panel
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.vynil-side-bar
+{
+    padding-left: 10px;
+    width: 300px;
+    min-height: 100vh;
+    color: $colorFore2;
+    background-color: $colorBack1;
+}

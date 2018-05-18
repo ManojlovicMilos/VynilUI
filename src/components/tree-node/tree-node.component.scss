@@ -1,0 +1,33 @@
+@import "../common/common";
+
+.node
+{
+    cursor: pointer;
+    margin-left: 12px;
+    font-size: 12px;
+    color: $colorFore2;
+}
+
+.node-title
+{
+    height: 15px;
+    &:hover
+    {
+        background-color: $colorBack2;
+    }
+}
+
+.node-toggler
+{
+    height: 15px;
+    width: 8px;
+    float: left;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.node-icon
+{
+    float: left;
+    margin-right: 8px;
+}

@@ -1,0 +1,29 @@
+@import "../common/common";
+
+.body
+{
+    float: left;
+    width: 10px;
+    min-height: 100vh;
+    color: $colorFore4;
+    background-color: $colorBack2;
+    padding-top: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    transition: all .3s;
+    &.extended
+    {
+        width: 40px;
+    }
+}
+.entry
+{
+    font-size: 35px;
+    text-align: center;
+    &:hover
+    {
+        color: $colorFore1;
+    }
+}

@@ -1,0 +1,18 @@
+@import "../common/common";
+
+.toggler
+{
+    width: 100%;
+    cursor: pointer;
+    height: 18px;
+    font-size: 15px;
+    color: $colorFore2;
+    background-color: $colorBack2;
+}
+
+.toggler-icon
+{
+    float: left;
+    margin-left: 8px;
+    margin-right: 8px;
+}
