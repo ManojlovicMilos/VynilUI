@@ -1,6 +1,12 @@
 <div class="clean vynil-side-bar">
     <vynil-toggler [toggled]="inputsVisible" [title]="'Inputs'" (toggle)="onToggleInputs($event)"></vynil-toggler>
-    <div *ngIf="inputsVisible" class="vynil-panel">
+    <div *ngIf="inputsVisible" class="vynil-form">
+        <p class="vynil-label centered">{{inputTextValue}}</p>
+        <vynil-text-input name="input_text" [length]="12" [(ngModel)]="inputTextValue"></vynil-text-input>
+        <p class="vynil-label centered">{{inputNumericValue}}</p>
+        <vynil-numeric-input name="input_numeric" [step]="0.1" [min]="5" [(ngModel)]="inputNumericValue"></vynil-numeric-input>
+        <p class="vynil-label centered">{{inputCheckValue}}</p>
+        <vynil-check-input name="input_check" [(ngModel)]="inputCheckValue"></vynil-check-input>
     </div>
     <vynil-toggler [toggled]="treeViewVisible" [title]="'Tree View'" (toggle)="onToggleTreeView($event)"></vynil-toggler>
     <div *ngIf="treeViewVisible" class="vynil-panel">

@@ -21,9 +21,9 @@ export class TreeNodeComponent implements OnInit
     public get selected(): boolean { return this.node.selected; }
     public get selectable(): boolean
     {
-        if(!this.guide) return this.node.children.length == 0;
+        if(!this.guide) return this.node.children == undefined || this.node.children.length == 0;
         else if(this.guide.selectable) return this.node[this.guide.selectable];
-        else return this.node[this.guide.children].length == 0;
+        else return this.node[this.guide.children] == undefined || this.node[this.guide.children].length == 0;
     }
     public constructor()
     {
@@ -37,23 +37,23 @@ export class TreeNodeComponent implements OnInit
     }
     private determineIcon() : string
     {
-        if(!this.guide) return this.node.icon;
-        if(this.guide.iconType == "basic") return this.node[this.guide.icon];
+        if(!this.guide) return this.node.icon || "cog";
+        if(this.guide.iconType == "basic") return this.node[this.guide.icon] || "cog";
         else if(this.guide.iconType == "files")
         {
             let extension = this.findExtension(this.node[this.guide.fileName]);
-            return this.guide.fileIcons[extension];
+            return this.guide.fileIcons[extension]  || "cog";
         }
     }
     private determineTitle() : string
     {
-        if(!this.guide) return this.node.title;
-        else return this.node[this.guide.title];
+        if(!this.guide) return this.node.title  || "Unnamed";
+        else return this.node[this.guide.title] || "Unnamed";
     }
     private determineChildren() : string
     {
-        if(!this.guide) return this.node.children;
-        else return this.node[this.guide.children];
+        if(!this.guide) return this.node.children || [];
+        else return this.node[this.guide.children] || [];
     }
     private findExtension(fileName:string) : string
     {

@@ -7,14 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoSideBarComponent implements OnInit
 {
+    private _inputTextValue:string;
+    private _inputNumericValue:number;
+    private _inputCheckValue:boolean;
     private _inputsVisible:boolean;
     private _treeViewVisible:boolean;
     private _treeViewData:any;
+    public get inputTextValue():string { return this._inputTextValue; }
+    public set inputTextValue(value:string) { this._inputTextValue = value; }
+    public get inputNumericValue():number { return this._inputNumericValue; }
+    public set inputNumericValue(value:number) { this._inputNumericValue = value; }
+    public get inputCheckValue():boolean { return this._inputCheckValue; }
+    public set inputCheckValue(value:boolean) { this._inputCheckValue = value; }
     public get inputsVisible():boolean { return this._inputsVisible; }
     public get treeViewVisible():boolean { return this._treeViewVisible; }
     public get treeViewData():any { return this._treeViewData; }
     public constructor()
     {
+        this._inputTextValue = "Some Text";
+        this._inputNumericValue = 123456;
+        this._inputCheckValue = true;
         this._inputsVisible = true;
         this._treeViewVisible = true;
         this._treeViewData = 

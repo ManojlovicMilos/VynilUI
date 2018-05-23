@@ -3,6 +3,9 @@ $colorFore2: #DDDDDD;
 $colorFore3: #BBBBBB;
 $colorFore4: #999999;
 $colorFore5: #777777;
+$colorMedi1: #666666;
+$colorMedi2: #555555;
+$colorMedi3: #444444;
 $colorBack1: #333333;
 $colorBack2: #222222;
 $colorBack3: #111111;
@@ -32,6 +35,12 @@ $colorHigh3: #FF6700;
     margin-bottom: 10px;
 }
 
+.vynil-form
+{
+    padding: 0px;
+    margin: 10px;
+}
+
 .vynil-side-bar
 {
     padding-left: 10px;
@@ -40,3 +49,96 @@ $colorHigh3: #FF6700;
     color: $colorFore2;
     background-color: $colorBack1;
 }
+
+.vynil-label
+{
+    color: $colorFore3;
+    font-size: 12px;
+    width: 100%;
+    height: 12px;
+}
+
+.centered
+{
+    text-align: center;
+}
+
+.vynil-input
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+.vynil-text-input
+{
+    color: $colorFore3;
+    width: 100%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border: 1px solid $colorBack1;
+    background-color: $colorBack2;
+    &:focus
+    {
+        color: $colorFore1;
+        border: 1px solid $colorHigh2;
+        outline: none;
+    }
+}
+
+.vynil-check-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  .container input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
