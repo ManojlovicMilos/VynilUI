@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoSideBarComponent implements OnInit
 {
+    private _inputsVisible:boolean;
+    private _treeViewVisible:boolean;
     private _treeViewData:any;
+    public get inputsVisible():boolean { return this._inputsVisible; }
+    public get treeViewVisible():boolean { return this._treeViewVisible; }
     public get treeViewData():any { return this._treeViewData; }
     public constructor()
     {
+        this._inputsVisible = true;
+        this._treeViewVisible = true;
         this._treeViewData = 
         {
             title: "Browsers",
@@ -69,5 +75,17 @@ export class DemoSideBarComponent implements OnInit
     public ngOnInit() : void
     {
         
+    }
+    public onToggleInputs(value:boolean) : void
+    {
+        this._inputsVisible = value;
+    }
+    public onToggleTreeView(value:boolean) : void
+    {
+        this._treeViewVisible = value;
+    }
+    public onTreeViewSelect(node:any) : void
+    {
+        console.log(node);
     }
 }

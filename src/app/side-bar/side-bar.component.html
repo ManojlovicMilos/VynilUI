@@ -1,6 +1,9 @@
 <div class="clean vynil-side-bar">
-    <vynil-toggler [toggled]="true" [title]="'Tree View'"></vynil-toggler>
-    <div class="vynil-panel">
-        <vynil-tree-node [node]="treeViewData"></vynil-tree-node>
+    <vynil-toggler [toggled]="inputsVisible" [title]="'Inputs'" (toggle)="onToggleInputs($event)"></vynil-toggler>
+    <div *ngIf="inputsVisible" class="vynil-panel">
+    </div>
+    <vynil-toggler [toggled]="treeViewVisible" [title]="'Tree View'" (toggle)="onToggleTreeView($event)"></vynil-toggler>
+    <div *ngIf="treeViewVisible" class="vynil-panel">
+        <vynil-tree-node [node]="treeViewData" [icon]="true" [toggleable]="true" (select)="onTreeViewSelect($event)"></vynil-tree-node>
     </div>
 </div>

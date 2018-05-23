@@ -1,8 +1,8 @@
 <div class="clean node row">
-    <span class="clean node-toggler" (click)="onToggle()"><fa *ngIf="children.length > 0" class="clean" name="{{toggleIcon}}"></fa></span>
-    <fa class="clean node-icon" (click)="onToggle()" name="{{icon}}"></fa>
-    <p class="clean node-title" (click)="onToggle()">{{title}}</p>
-    <div *ngIf="toggled" class="node-children">
-        <vynil-tree-node *ngFor="let child of children" [node]="child" [guide]="guide"></vynil-tree-node>
+    <span *ngIf="toggleable" class="clean node-toggler" (click)="onToggle()"><fa *ngIf="children.length > 0" class="clean" name="{{toggleIcon}}"></fa></span>
+    <fa *ngIf="icon" class="clean node-icon" (click)="onClick()" name="{{iconName}}"></fa>
+    <p class="clean node-title" (click)="onClick()">{{title}}</p>
+    <div *ngIf="toggled || !toggleable" class="node-children">
+        <vynil-tree-node *ngFor="let child of children" [node]="child" [guide]="guide" [icon]="icon" [toggleable]="toggleable" (select)="onChildSelect($event)"></vynil-tree-node>
     </div>
 </div>
