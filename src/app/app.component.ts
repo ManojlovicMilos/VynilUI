@@ -12,6 +12,7 @@ export class AppComponent
     public get sideToggleEntries():any[] { return this._sideToggleEntries; }
     public constructor()
     {
+        document.addEventListener('contextmenu', event => event.preventDefault());
         this._sideToggleEntries.push({tooltip:"Library", icon:"book", method:function(){console.log("Library")}});
         this._sideToggleEntries.push({tooltip:"Settings", icon:"cog", method:function(){console.log("Settings")}});
         this._sideToggleEntries.push({tooltip:"More Info", icon:"info-circle", method:function(){console.log("More Info")}});

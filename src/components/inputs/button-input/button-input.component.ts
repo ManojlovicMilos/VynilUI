@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { InputComponent } from "./../input/input.component";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'vinyl-button-input',
+    selector: 'vynil-button-input',
     templateUrl: './button-input.component.html',
     styleUrls: ['./button-input.component.scss']
 })
-export class ButtonInputComponent extends InputComponent
+export class ButtonInputComponent
 {
+    @Input() enabled: boolean;
+    @Input() text: string;
+    @Output() press: EventEmitter<any>;
     public constructor()
     {
-        super();
+        this.press = new EventEmitter<any>();
+    }
+    public onClick() : void
+    {
+        this.press.emit();
     }
 }

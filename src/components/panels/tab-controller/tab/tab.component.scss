@@ -1,0 +1,39 @@
+@import "../../../common/common";
+
+.tab-item
+{
+    user-drag: none;
+    user-select: none;
+    float:left;
+    cursor: pointer;
+    height: 25px;
+    border: solid 1px $colorBack3;
+    border-width: 0px 1px 0px 0px;
+    background-color: $colorBack1;
+    &.selected
+    {
+        background-color: $colorMedi2;
+    }
+    &:hover
+    {
+        color: $colorBack4;
+        background-color: $colorHigh2;
+    }
+}
+
+.tab-icon
+{
+    float: left;
+    margin-right: 8px;
+}
+
+.vynil-tab-content
+{
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: $colorFore1;
+    font-size: 12px;
+    width: 100%;
+    height: 10px;
+}

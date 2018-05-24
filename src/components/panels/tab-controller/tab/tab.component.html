@@ -1,0 +1,6 @@
+<div draggable="true" (dragstart)="onDrag()" (drop)="onDrop()" (dragover)="onDragged()" class="tab-item" [ngClass]="{'selected':getSelected()}" (click)="onClick($event)">
+    <p class="clean vynil-tab-content"> 
+        <fa *ngIf="getIconVisible()" class="clean node-icon" name="{{iconName}}"></fa>
+        {{getTitle()}}
+    </p>
+</div>

@@ -9,6 +9,11 @@ export class InputComponent implements ControlValueAccessor, OnInit
     protected innerValue: any;
     protected onTouchedCallback: () => void = noop;
     protected onChangeCallback: (_: any) => void = noop;
+    public get isReadonly() : boolean
+    {
+        if((typeof this.enabled) == 'undefined') this.enabled = true;
+        return !this.enabled;
+    }
     public get value(): any { return this.innerValue; };
     public set value(value: any)
     {
@@ -24,7 +29,6 @@ export class InputComponent implements ControlValueAccessor, OnInit
     }
     public ngOnInit()
     {
-        if(typeof this.enabled !== 'undefined') this.enabled = true;
     }
     public onBlur() : void
     {

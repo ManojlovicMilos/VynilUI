@@ -1,0 +1,3 @@
+<div class="clean vynil-header" (drop)="onDrop()">
+    <vynil-tab *ngFor="let tab of tabs" [data]="tab" (tabDrag)="onDrag($event)" (tabDrop)="onDrop()" (tabDragged)="onDragged($event)" [guide]="guide" (select)="onSelect($event)"></vynil-tab>
+</div>

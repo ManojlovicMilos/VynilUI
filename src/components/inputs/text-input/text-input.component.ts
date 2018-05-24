@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { InputComponent } from "./../input/input.component";
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
@@ -15,7 +15,11 @@ export const TEXT_INPUT_ACCESSOR: any =
     styleUrls: ['./text-input.component.scss'],
     providers: [TEXT_INPUT_ACCESSOR]
 })
-export class TextInputComponent extends InputComponent
+export class TextInputComponent extends InputComponent implements OnInit
 {
     @Input() length:number;
+    ngOnInit()
+    {
+        super.ngOnInit();
+    }
 }

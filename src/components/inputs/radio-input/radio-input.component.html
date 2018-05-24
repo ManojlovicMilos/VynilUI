@@ -1,0 +1,7 @@
+<div class="form-group clean input-form">
+    <mat-radio-group class="" [(ngModel)]="value">
+        <mat-radio-button class="vynil-radio-style" [color]="'warn'" *ngFor="let option of options" [value]="getValue(option)">
+            {{getTitle(option)}}
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

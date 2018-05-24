@@ -1,3 +1,3 @@
 <div class="form-group clean input-form">
-    <input [(ngModel)]="value" step="{{step}}" max="{{max}}" min="{{min}}" readonly="{{enabled}}" class="form-control vynil-input vynil-text-input" type="number" (blur)="onBlur()" >
+    <input [(ngModel)]="value" step="{{step}}" max="{{max}}" min="{{min}}" [readonly]="isReadonly" class="form-control vynil-input vynil-text-input" type="number" (blur)="onBlur()" >
 </div>

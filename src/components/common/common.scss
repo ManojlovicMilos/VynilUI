@@ -11,13 +11,18 @@ $colorBack2: #222222;
 $colorBack3: #111111;
 $colorBack4: #000000;
 $colorHigh1: #FF802A;
-$colorHigh2: #FF6700;
+$colorHigh2: #F44336;
 $colorHigh3: #FF6700;
 
 .clean
 {
     margin: 0px;
     padding: 0px;
+}
+
+.centered
+{
+    text-align: center;
 }
 
 .vynil-main-body
@@ -35,19 +40,46 @@ $colorHigh3: #FF6700;
     margin-bottom: 10px;
 }
 
+.vynil-header
+{
+    width: 100%;
+    height: 25px;
+    color: $colorFore2;
+    background-color: $colorBack2;
+}
+
 .vynil-form
 {
     padding: 0px;
     margin: 10px;
 }
 
+.vynil-tab-form
+{
+    padding: 0px;
+    margin: 0px;
+    border-width: 0px;
+    width: 100%;
+    height: calc(100vh - 25px);
+}
+
 .vynil-side-bar
 {
     padding-left: 10px;
     width: 300px;
-    min-height: 100vh;
+    height: 100vh;
     color: $colorFore2;
     background-color: $colorBack1;
+    overflow-y: auto;
+    float: left;
+    display: inline-block;
+}
+
+.vynil-content
+{
+    float:left;
+    display: inline-block;
+    width: calc(100% - 310px);
 }
 
 .vynil-label
@@ -58,9 +90,9 @@ $colorHigh3: #FF6700;
     height: 12px;
 }
 
-.centered
+.vynil-toggle
 {
-    text-align: center;
+    width: 100%;
 }
 
 .vynil-input
@@ -85,60 +117,27 @@ $colorHigh3: #FF6700;
     }
 }
 
-.vynil-check-container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
+.vynil-button-input
+{
+    color: $colorFore2;
+    min-width: 100%;
     cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-  
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+    height: 16px;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-width: 0px;
+    background-color: $colorMedi2;
+    &:hover
+    {
+        color: $colorFore1;
+        background-color: $colorHigh2;
+    }
+}
+
+::-webkit-scrollbar
+{
+    width: 0px;
+    background: transparent;
+}

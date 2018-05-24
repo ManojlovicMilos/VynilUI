@@ -1,0 +1,20 @@
+@import "../../common/common";
+
+.vynil-select
+{
+    outline: none;
+}
+
+.vynil-select-option
+{
+    color: $colorFore3;
+    border: 1px solid $colorHigh2;
+    background-color: $colorBack2;
+    outline: none;
+    &:hover
+    {
+        color: $colorFore1;
+        background-color: $colorHigh2;
+        outline: none;
+    }
+}

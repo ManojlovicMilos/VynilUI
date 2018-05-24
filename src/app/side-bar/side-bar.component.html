@@ -1,15 +1,38 @@
 <div class="clean vynil-side-bar">
     <vynil-toggler [toggled]="inputsVisible" [title]="'Inputs'" (toggle)="onToggleInputs($event)"></vynil-toggler>
     <div *ngIf="inputsVisible" class="vynil-form">
-        <p class="vynil-label centered">{{inputTextValue}}</p>
-        <vynil-text-input name="input_text" [length]="12" [(ngModel)]="inputTextValue"></vynil-text-input>
-        <p class="vynil-label centered">{{inputNumericValue}}</p>
-        <vynil-numeric-input name="input_numeric" [step]="0.1" [min]="5" [(ngModel)]="inputNumericValue"></vynil-numeric-input>
-        <p class="vynil-label centered">{{inputCheckValue}}</p>
-        <vynil-check-input name="input_check" [(ngModel)]="inputCheckValue"></vynil-check-input>
+        <vynil-toggler [toggled]="basicInputsVisible" [title]="'Basic Inputs'" (toggle)="onToggleBasicInputs($event)"></vynil-toggler>
+        <div *ngIf="basicInputsVisible" class="vynil-form">
+            <vynil-button-input [text]="'Button'" (press)="onButtonClick()"></vynil-button-input>
+            <p class="vynil-label centered">Text Input - {{inputTextValue}}</p>
+            <vynil-text-input name="input_text" [length]="12" [(ngModel)]="inputTextValue"></vynil-text-input>
+            <p class="vynil-label centered">Numeric Input - {{inputNumericValue}}</p>
+            <vynil-numeric-input name="input_numeric" [step]="0.1" [min]="5" [(ngModel)]="inputNumericValue"></vynil-numeric-input>
+            <p class="vynil-label centered">Password Input - {{inputPasswordValue}}</p>
+            <vynil-password-input name="input_password" [length]="8" [(ngModel)]="inputPasswordValue"></vynil-password-input>
+            <p class="vynil-label centered">Check Input - {{inputCheckValue}}</p>
+            <vynil-check-input name="input_check" [(ngModel)]="inputCheckValue"></vynil-check-input>
+            <p class="vynil-label centered">Toggle Input - {{inputToggleValue}}</p>
+            <vynil-toggle-input name="input_toggle" [(ngModel)]="inputToggleValue"></vynil-toggle-input>
+        </div>
+        <vynil-toggler [toggled]="advancedInputsVisible" [title]="'Advanced Inputs'" (toggle)="onToggleAdvancedInputs($event)"></vynil-toggler>
+        <div *ngIf="advancedInputsVisible" class="vynil-form">
+            <p class="vynil-label centered">Radio Input - {{inputRadioValue}}</p>
+            <vynil-radio-input name="input_radio" [options]="inputRadioOptions" [(ngModel)]="inputRadioValue"></vynil-radio-input>
+            <p class="vynil-label centered">Select Input - {{inputSelectValue}}</p>
+            <vynil-select-input name="input_select" [options]="inputSelectOptions" [(ngModel)]="inputSelectValue"></vynil-select-input>
+            <p class="vynil-label centered">Date Input - {{inputDateValue}}</p>
+            <vynil-date-input name="input_date" [(ngModel)]="inputDateValue"></vynil-date-input>
+            <p class="vynil-label centered">Color Input - {{inputColorValue}}</p>
+            <vynil-color-input name="input_color" [(ngModel)]="inputColorValue"></vynil-color-input>
+            <p class="vynil-label centered">Vector Input - {{'('+inputVectorValue.X+','+inputVectorValue.Y+','+inputVectorValue.Z+")"}}</p>
+            <vynil-vector-input name="input_vector" [step]="0.1" [(ngModel)]="inputVectorValue"></vynil-vector-input>
+        </div>
     </div>
     <vynil-toggler [toggled]="treeViewVisible" [title]="'Tree View'" (toggle)="onToggleTreeView($event)"></vynil-toggler>
     <div *ngIf="treeViewVisible" class="vynil-panel">
-        <vynil-tree-node [node]="treeViewData" [icon]="true" [toggleable]="true" (select)="onTreeViewSelect($event)"></vynil-tree-node>
+        <vynil-toggle-input name="input_check" [fixed]="true" [text]="'Icons'" [(ngModel)]="treeViewIcons"></vynil-toggle-input>
+        <vynil-toggle-input name="input_check" [fixed]="true" [text]="'Toggleable'" [(ngModel)]="treeViewToggleable"></vynil-toggle-input>
+        <vynil-tree-node [node]="treeViewData" [icon]="treeViewIcons" [toggleable]="treeViewToggleable" (select)="onTreeViewSelect($event)"></vynil-tree-node>
     </div>
 </div>

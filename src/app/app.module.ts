@@ -6,11 +6,13 @@ import { ComponentsModule } from "./../components/components.module";
 import { AppComponent } from './app.component';
 
 import { DemoSideBarComponent } from "./side-bar/side-bar.component";
+import { DemoContentPanelComponent } from "./content-panel/content-panel.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    DemoSideBarComponent
+    DemoSideBarComponent,
+    DemoContentPanelComponent
   ],
   imports: [
     BrowserModule,

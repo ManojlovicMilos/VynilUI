@@ -1,0 +1,7 @@
+<div class="form-group clean input-form">
+    <select class="vynil-text-input vynil-select" [(ngModel)]="value">
+        <option class="vynil-select-option" *ngFor="let option of options" [value]="getValue(option)" [selected]="getSelected(option)">
+            {{getTitle(option)}}
+        </option>
+    </select>
+</div>

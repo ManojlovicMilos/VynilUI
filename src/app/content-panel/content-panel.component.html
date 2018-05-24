@@ -1,0 +1,7 @@
+<div class="vynil-content">
+    <vynil-tab-controller [tabs]="tabs" (changed)="onTabChange($event)"></vynil-tab-controller>
+    <iframe *ngIf="selectedTab == 'chrome'" class="frame" src="https://en.wikipedia.org/wiki/Google_Chrome"></iframe>
+    <iframe *ngIf="selectedTab == 'firefox'" class="frame" src="https://en.wikipedia.org/wiki/Firefox"></iframe>
+    <iframe *ngIf="selectedTab == 'opera'" class="frame" src="https://en.wikipedia.org/wiki/Opera_(web_browser)"></iframe>
+    <iframe *ngIf="selectedTab == 'edge'" class="frame" src="https://en.wikipedia.org/wiki/Microsoft_Edge"></iframe>
+</div>

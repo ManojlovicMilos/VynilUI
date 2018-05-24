@@ -1,0 +1,20 @@
+<div *ngIf="value" class="form-group clean input-form">
+    <div class="clean vynil-labeled-input-panel">
+        <p class="vynil-input-label">X:</p>
+        <span class="clean vynil-input-labeled">
+            <vynil-numeric-input [min]="min" [max]="max" [step]="step" [(ngModel)]="value.X"></vynil-numeric-input>
+        </span>
+    </div>
+    <div class="clean vynil-labeled-input-panel">
+        <p class="vynil-input-label">Y:</p>
+        <span class="clean vynil-input-labeled">
+            <vynil-numeric-input [min]="min" [max]="max" [step]="step" [(ngModel)]="value.Y"></vynil-numeric-input>
+        </span>
+    </div>
+    <div *ngIf="!planar" class="clean vynil-labeled-input-panel">
+        <p class="vynil-input-label">Z:</p>
+        <span class="clean vynil-input-labeled">
+            <vynil-numeric-input [min]="min" [max]="max" [step]="step" [(ngModel)]="value.Z"></vynil-numeric-input>
+        </span>
+    </div>
+</div>
