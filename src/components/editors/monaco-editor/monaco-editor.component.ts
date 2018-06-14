@@ -2,15 +2,14 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { MonacoFile } from 'ngx-monaco';
 
 @Component({
-  selector: 'vynil-code-editor',
-  templateUrl: './code-editor.component.html',
-  styleUrls: ['./code-editor.component.scss']
+  selector: 'vynil-monaco-editor',
+  templateUrl: './monaco-editor.component.html',
+  styleUrls: ['./monaco-editor.component.scss']
 })
-export class CodeEditorComponent implements OnInit
+export class MonacoEditorComponent implements OnInit
 {
     @Input() fileData:string;
     @Input() fileType:string;
-    @Input() fileAdress:string;
     @Output() fileChanged:EventEmitter<string>;
     private _file:MonacoFile;
     public get file(): MonacoFile { return this._file; }
@@ -22,7 +21,7 @@ export class CodeEditorComponent implements OnInit
     {
         this._file =
         {
-            uri: (this.fileAdress) || "file.js",
+            uri: "file.js",
             language: (this.fileType) || "javascript",
             content: (this.fileData) || ""
         };

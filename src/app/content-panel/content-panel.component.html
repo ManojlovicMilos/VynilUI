@@ -4,5 +4,6 @@
     <iframe *ngIf="selectedTab == 'firefox'" class="frame" src="https://en.wikipedia.org/wiki/Firefox"></iframe>
     <iframe *ngIf="selectedTab == 'opera'" class="frame" src="https://en.wikipedia.org/wiki/Opera_(web_browser)"></iframe>
     <iframe *ngIf="selectedTab == 'edge'" class="frame" src="https://en.wikipedia.org/wiki/Microsoft_Edge"></iframe>
-    <vynil-code-editor *ngIf="selectedTab == 'code-editor'" [fileData]="code" [fileType]="'typescript'" [fileAdress]="'code.ts'" (fileChanged)="onCodeChange($event)"></vynil-code-editor>
+    <vynil-ace-editor *ngIf="selectedTab == 'ace'" [fileData]="code" [fileType]="'typescript'" (fileChanged)="onCodeChange($event)"></vynil-ace-editor>
+    <vynil-monaco-editor *ngIf="selectedTab == 'monaco'" [fileData]="code" [fileType]="'typescript'" (fileChanged)="onCodeChange($event)"></vynil-monaco-editor>
 </div>

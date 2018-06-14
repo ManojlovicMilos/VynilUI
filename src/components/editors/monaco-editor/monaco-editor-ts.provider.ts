@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CompletionItemProvider } from 'ngx-monaco';
 
 @Injectable()
-export class ToyBoxTypescriptCompletionProvider implements CompletionItemProvider
+export class TypescriptCompletionProvider implements CompletionItemProvider
 {
 	public get language() { return "typescript"; }
 	public provideCompletionItems(model: monaco.editor.IReadOnlyModel): any

@@ -38,8 +38,13 @@ export class DemoContentPanelComponent
                 selected: false
             },
             {
-                title: "Code",
-                value: "code-editor",
+                title: "Ace Code",
+                value: "ace",
+                selected: false
+            },
+            {
+                title: "Monaco Code",
+                value: "monaco",
                 selected: false
             }
         ]

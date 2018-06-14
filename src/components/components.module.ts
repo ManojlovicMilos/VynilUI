@@ -9,6 +9,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio'
+import { AceEditorModule } from 'ng2-ace-editor';
 import { MonacoEditorModule, COMPLETION_PROVIDERS } from 'ngx-monaco';
 
 import { TogglerComponent } from "./panels/toggler/toggler.component";
@@ -17,7 +18,8 @@ import { SideModeSwitchComponent } from "./panels/side-mode-switch/side-mode-swi
 import { TabComponent } from "./panels/tab-controller/tab/tab.component";
 import { TabControllerComponent } from "./panels/tab-controller/tab-controller.component";
 
-import { CodeEditorComponent } from "./editors/code-editor/code-editor.component";
+import { AceEditorComponent } from "./editors/ace-editor/ace-editor.component";
+import { MonacoEditorComponent } from "./editors/monaco-editor/monaco-editor.component";
 
 import { TextInputComponent } from "./inputs/text-input/text-input.component";
 import { NumericInputComponent } from "./inputs/numeric-input/numeric-input.component";
@@ -34,7 +36,7 @@ import { VectorInputComponent } from "./inputs/vector-input/vector-input.compone
 
 import { Numeric } from "./directives/numeric.directive";
 
-import { ToyBoxTypescriptCompletionProvider } from "./editors/code-editor/code-editor-ts.provider";
+import { TypescriptCompletionProvider } from "./editors/monaco-editor/monaco-editor-ts.provider";
 
 @NgModule({
   declarations:
@@ -57,7 +59,8 @@ import { ToyBoxTypescriptCompletionProvider } from "./editors/code-editor/code-e
     TimeInputComponent,
     ColorInputComponent,
     VectorInputComponent,
-    CodeEditorComponent
+    AceEditorComponent,
+    MonacoEditorComponent
   ],
   imports:
   [
@@ -70,6 +73,7 @@ import { ToyBoxTypescriptCompletionProvider } from "./editors/code-editor/code-e
     MatSlideToggleModule,
     MatCheckboxModule,
     MatRadioModule,
+    AceEditorModule,
     MonacoEditorModule.forRoot()
   ],
   exports:
@@ -91,11 +95,12 @@ import { ToyBoxTypescriptCompletionProvider } from "./editors/code-editor/code-e
     TimeInputComponent,
     ColorInputComponent,
     VectorInputComponent,
-    CodeEditorComponent
+    AceEditorComponent,
+    MonacoEditorComponent
   ],
   providers:
   [
-		{ provide: COMPLETION_PROVIDERS, useClass: ToyBoxTypescriptCompletionProvider, multi: true }
+		{ provide: COMPLETION_PROVIDERS, useClass: TypescriptCompletionProvider, multi: true }
 	]
 })
 export class ComponentsModule { }
