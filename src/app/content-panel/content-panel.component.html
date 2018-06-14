@@ -4,4 +4,5 @@
     <iframe *ngIf="selectedTab == 'firefox'" class="frame" src="https://en.wikipedia.org/wiki/Firefox"></iframe>
     <iframe *ngIf="selectedTab == 'opera'" class="frame" src="https://en.wikipedia.org/wiki/Opera_(web_browser)"></iframe>
     <iframe *ngIf="selectedTab == 'edge'" class="frame" src="https://en.wikipedia.org/wiki/Microsoft_Edge"></iframe>
+    <vynil-code-editor *ngIf="selectedTab == 'code-editor'" [fileData]="code" [fileType]="'typescript'" [fileAdress]="'code.ts'" (fileChanged)="onCodeChange($event)"></vynil-code-editor>
 </div>

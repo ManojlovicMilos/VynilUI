@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DemoContentPanelComponent
 {
+    private _code:string;
     private _tabs:any[];
     private _selectedTab:string;
     public get selectedTab():string { return this._selectedTab; }
@@ -35,11 +36,21 @@ export class DemoContentPanelComponent
                 title: "Edge",
                 value: "edge",
                 selected: false
+            },
+            {
+                title: "Code",
+                value: "code-editor",
+                selected: false
             }
         ]
     }
-    public onTabChange(tab:any)
+    public onTabChange(tab:any) : void
     {
         this._selectedTab = tab.value;
+    }
+    public onCodeChange(code:string) : void
+    {
+        this._code = code;
+        console.log(code);
     }
 }

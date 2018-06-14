@@ -9,12 +9,15 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio'
+import { MonacoEditorModule, COMPLETION_PROVIDERS } from 'ngx-monaco';
 
 import { TogglerComponent } from "./panels/toggler/toggler.component";
 import { TreeNodeComponent } from "./views/tree-node/tree-node.component";
 import { SideModeSwitchComponent } from "./panels/side-mode-switch/side-mode-switch.component";
 import { TabComponent } from "./panels/tab-controller/tab/tab.component";
 import { TabControllerComponent } from "./panels/tab-controller/tab-controller.component";
+
+import { CodeEditorComponent } from "./editors/code-editor/code-editor.component";
 
 import { TextInputComponent } from "./inputs/text-input/text-input.component";
 import { NumericInputComponent } from "./inputs/numeric-input/numeric-input.component";
@@ -30,6 +33,8 @@ import { ColorInputComponent } from "./inputs/color-input/color-input.component"
 import { VectorInputComponent } from "./inputs/vector-input/vector-input.component";
 
 import { Numeric } from "./directives/numeric.directive";
+
+import { ToyBoxTypescriptCompletionProvider } from "./editors/code-editor/code-editor-ts.provider";
 
 @NgModule({
   declarations:
@@ -51,7 +56,8 @@ import { Numeric } from "./directives/numeric.directive";
     DateInputComponent,
     TimeInputComponent,
     ColorInputComponent,
-    VectorInputComponent
+    VectorInputComponent,
+    CodeEditorComponent
   ],
   imports:
   [
@@ -63,7 +69,8 @@ import { Numeric } from "./directives/numeric.directive";
     MatTooltipModule,
     MatSlideToggleModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MonacoEditorModule.forRoot()
   ],
   exports:
   [
@@ -83,7 +90,12 @@ import { Numeric } from "./directives/numeric.directive";
     DateInputComponent,
     TimeInputComponent,
     ColorInputComponent,
-    VectorInputComponent
-  ]
+    VectorInputComponent,
+    CodeEditorComponent
+  ],
+  providers:
+  [
+		{ provide: COMPLETION_PROVIDERS, useClass: ToyBoxTypescriptCompletionProvider, multi: true }
+	]
 })
 export class ComponentsModule { }
