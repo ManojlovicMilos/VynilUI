@@ -14,7 +14,7 @@ export class ButtonInputComponent
     {
         this.press = new EventEmitter<any>();
     }
-    public onClick() : void
+    public onClick(event:MouseEvent) : void
     {
         this.press.emit();
     }

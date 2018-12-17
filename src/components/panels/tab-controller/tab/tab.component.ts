@@ -36,7 +36,7 @@ export class TabComponent implements OnInit
         else if(this.guide) return this.guide.iconsVisible;
         else return this.data.icon != undefined;
     }
-    private getIcon() : string
+    public getIcon() : string
     {
         if(!this.guide) return this.data.icon || "cog";
         if(this.guide.iconType == "basic") return this.data[this.guide.icon] || "cog";
