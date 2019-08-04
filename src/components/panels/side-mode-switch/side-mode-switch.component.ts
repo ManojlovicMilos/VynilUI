@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
@@ -9,6 +9,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 export class SideModeSwitchComponent implements OnInit
 {
     @Input() entries: any[];
+    @Output() selected: EventEmitter<string>;
     private _toggled: boolean;
     private _extended: boolean;
     public get toggled():boolean { return this._toggled; }
@@ -16,6 +17,7 @@ export class SideModeSwitchComponent implements OnInit
     public contructor()
     {
         this._extended = false;
+        this.selected = new EventEmitter<string>();
     }
     public ngOnInit() : void
     {
@@ -37,6 +39,10 @@ export class SideModeSwitchComponent implements OnInit
     }
     public onExecute(entry:any) : void
     {
-        entry.method(entry);
+        this.selected.emit(entry);
+        if(entry.method != null)
+        {
+            entry.method(entry);
+        }
     }
 }
