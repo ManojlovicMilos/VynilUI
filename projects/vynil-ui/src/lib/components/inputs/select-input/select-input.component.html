@@ -1,22 +1,10 @@
-<vui-view [relative]="true" class="select">
+<vui-view [relative]="true" class="select" [width]="width" [maxWidth]="maxWidth">
     <div
-        (click)="onToggleDropdown()"
         class="current-value"
-        [ngClass]="{
-            'open': dropdownVisible,
-            'extra-small': textSize === 'extraSmall',
-            'small': textSize === 'small',
-            'large': textSize === 'large',
-            'extra-large': textSize === 'extraLarge',
-            'header': textSize === 'header'
-        }"
+        (click)="onToggleDropdown()"
+        [ngClass]="textSize + (dropdownVisible ? ' open' : '')"
         [ngStyle]="{
-            'width': width,
-            'height': height,
-            'max-width': maxWidth,
-            'max-height': maxHeight,
             'min-width': minWidth,
-            'min-height': minHeight,
             'margin': margin,
             'padding': padding
         }">
@@ -25,22 +13,17 @@
             class="icon"
             icon="caret"
             size="medium"
+            [ngClass]="textSize"
             [rotation]="dropdownVisible ? 0 : 180">
         </vui-icon>
     </div>
-    <div *ngIf="dropdownVisible" class="dropdown">
+    <div *ngIf="dropdownVisible" class="dropdown" [ngClass]="textSize">
         <vui-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
             <option
                 *ngFor="let option of options; trackBy:identify"
                 (click)="onSelectOption(option)"
-                class="option"
-                [ngClass]="{
-                    'extra-small': textSize === 'extraSmall',
-                    'small': textSize === 'small',
-                    'large': textSize === 'large',
-                    'extra-large': textSize === 'extraLarge',
-                    'header': textSize === 'header'
-                }">
+                [ngClass]="textSize"
+                class="option">
                 {{ option.text }}
             </option>
         </vui-view>

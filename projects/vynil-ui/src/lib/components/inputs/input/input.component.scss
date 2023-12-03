@@ -6,30 +6,47 @@ input {
     cursor: pointer;
     border: none;
     outline: none;
+    vertical-align: middle;
+    box-sizing: content-box;
     color: var(--vui-color-primary);
-    padding: var(--vui-variable-padding-s);
-    border-radius: var(--vui-variable-radius-s);
+    padding: var(--vui-variable-padding);
+    height: var(--vui-variable-font-size-m);
     font-size: var(--vui-variable-font-size-m);
+    line-height: var(--vui-variable-font-size-m);
+    border-radius: var(--vui-variable-radius-s);
     background-color: var(--vui-color-background-darker);
+    border: var(--vui-variable-border) solid var(--vui-color-background-darker);
 
     &.has-border {
         border: 2px solid var(--vui-color-primary);
     }
 
     &.xsmall, &.xs {
+        height: var(--vui-variable-font-size-xs);
         font-size: var(--vui-variable-font-size-xs);
+        line-height: var(--vui-variable-font-size-xs);
     }
 
     &.small, &.s {
+        height: var(--vui-variable-font-size-s);
         font-size: var(--vui-variable-font-size-s);
+        line-height: var(--vui-variable-font-size-s);
     }
 
     &.large, &.l {
+        height: var(--vui-variable-font-size-l);
         font-size: var(--vui-variable-font-size-l);
+        line-height: var(--vui-variable-font-size-l);
     }
 
     &.xlarge, &.xl {
+        height: var(--vui-variable-font-size-xl);
         font-size: var(--vui-variable-font-size-xl);
+        line-height: var(--vui-variable-font-size-xl);
+    }
+
+    &:focus {
+        border: var(--vui-variable-border) solid var(--vui-color-primary);
     }
 }
 

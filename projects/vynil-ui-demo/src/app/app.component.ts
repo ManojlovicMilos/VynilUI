@@ -28,6 +28,7 @@ export class AppComponent {
                 name: 'Forms',
                 items: [
                     { label: 'Input', link: 'input' },
+                    { label: 'Select Input', link: 'select-input' },
                     { label: 'Toggle Input', link: 'toggle-input' },
                     { label: 'Color Input', link: 'color-input' },
                 ]

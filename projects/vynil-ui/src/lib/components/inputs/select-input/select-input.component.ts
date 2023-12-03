@@ -25,12 +25,10 @@ export interface SelectInputOption<T> {
 })
 export class SelectInputComponent<T> implements ControlValueAccessor {
     @Input() textSize: string;
+    @Input() flex: string;
     @Input() width: string;
-    @Input() height: string;
     @Input() maxWidth: string;
-    @Input() maxHeight: string;
     @Input() minWidth: string;
-    @Input() minHeight: string;
     @Input() margin: string;
     @Input() padding: string;
     @Input() emptyText: string;
@@ -49,13 +47,11 @@ export class SelectInputComponent<T> implements ControlValueAccessor {
 
     constructor() {
         this.textSize = VynilUITextSize.Medium;
+        this.flex = 'none';
         this.width = 'auto';
-        this.height = 'auto';
         this.maxWidth = 'none';
-        this.maxHeight = 'none';
-        this.minWidth = '0';
-        this.minHeight = '0';
         this.margin = '0';
+        this.minWidth = '10rem';
         this.padding = DEFAULT_PADDING;
         this.options = [];
         this.selectedValue = null;

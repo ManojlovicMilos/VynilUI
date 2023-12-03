@@ -31,13 +31,11 @@ export type InputType = 'text' | 'number' | 'password';
 })
 export class InputComponent implements ControlValueAccessor {
     @Input() size: string;
+    @Input() flex: string;
     @Input() align: string;
     @Input() width: string;
-    @Input() height: string;
     @Input() maxWidth: string;
-    @Input() maxHeight: string;
     @Input() minWidth: string;
-    @Input() minHeight: string;
     @Input() margin: string;
     @Input() padding: string;
     @Input() type: InputType;
@@ -60,14 +58,12 @@ export class InputComponent implements ControlValueAccessor {
 
     constructor() {
         this.size = VynilUITextSize.Medium;
+        this.flex = 'none';
         this.align = DEFAULT_ALIGN;
         this.width = 'auto';
-        this.height = 'auto';
         this.maxWidth = 'none';
-        this.maxHeight = 'none';
         this.margin = '0';
         this.minWidth = '0';
-        this.minHeight = '0';
         this.type = 'text';
         this.padding = DEFAULT_PADDING;
         this.control = new FormControl<string>('', { nonNullable: true });

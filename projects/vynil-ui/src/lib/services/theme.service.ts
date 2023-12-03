@@ -15,6 +15,7 @@ export interface Theme {
         primary: string;
         highlight: string;
         background: string;
+        boxShadow: string;
     };
 }
 
@@ -35,8 +36,9 @@ const DEFAULT_THEME: Theme = {
     colors: {
         text: '#FFFFFF',
         primary: '#0EA5E9',
-        highlight: '#38BDF8',
+        highlight: '#FFFFFF',
         background: '#27272A',
+        boxShadow: 'rgba(0, 0, 0, 0.45) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
     },
 }
 
@@ -94,8 +96,13 @@ export class ThemeService {
                 const themeColors = themeChanges.colors as { [key: string]: string };
                 Object.keys(themeColors)
                 .forEach((key: string) => {
-                    this.updateColor(element, key, themeColors[key]);
+                    if (key !== 'boxShadow') {
+                        this.updateColor(element, key, themeColors[key]);
+                    }
                 });
+                if (themeChanges.colors.boxShadow) {
+                    this.updateColor(element, 'box-shadow', themeChanges.colors.boxShadow, true);
+                }
             }
         }
     }
@@ -114,10 +121,12 @@ export class ThemeService {
         }
     }
 
-    private updateColor(element: HTMLElement, propertyName: string, value: string): void {
+    private updateColor(element: HTMLElement, propertyName: string, value: string, skipAlts?: boolean): void {
         element.style.setProperty('--vui-color-' + propertyName, value);
-        element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 15%)');
-        element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF 15%)');
+        if (!skipAlts) {
+            element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 15%)');
+            element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF 15%)');
+        }
     }
 
     private updateIconSizes(element: HTMLElement, values: number[]): void {

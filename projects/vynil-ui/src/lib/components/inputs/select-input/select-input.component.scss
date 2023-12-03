@@ -1,81 +1,143 @@
-@import '../../../../styles/variables';
-
 .current-value {
     cursor: pointer;
     outline: none;
-    color: $main-color;
-    background-color: $back-color;
-    border: 2px solid $main-color;
-    border-radius: var(--vui-variable-radius-small);
+    width: 100%;
+    box-sizing: border-box;
+    color: var(--vui-color-primary);
+    font-size: var(--vui-variable-font-size-m);
+    line-height: var(--vui-variable-font-size-m);
+    border-radius: var(--vui-variable-radius-s);
+    background-color: var(--vui-color-background-darker);
+    border: var(--vui-variable-border) solid var(--vui-color-background-darker);
 
     &.open {
-        border-radius: 0.5rem 0.5rem 0 0;
+        border: var(--vui-variable-border) solid var(--vui-color-primary);
+        border-radius: var(--vui-variable-padding-s) var(--vui-variable-padding-s) 0 0;
+
+        .icon {
+            top: calc(var(--vui-variable-font-size-m) * 0.4);
+    
+            &.xsmall, &.xs {
+                top: calc(var(--vui-variable-font-size-xs) * 0.4);
+            }
+        
+            &.small, &.s {
+                top: calc(var(--vui-variable-font-size-s) * 0.4);
+            }
+        
+            &.large, &.l {
+                top: calc(var(--vui-variable-font-size-l) * 0.4);
+            }
+        
+            &.xlarge, &.xl {
+                top: calc(var(--vui-variable-font-size-xl) * 0.4);
+            }
+        }
     }
 
-    &.extra-small {
-        font-size: 8px;
+    &.xsmall, &.xs {
+        font-size: var(--vui-variable-font-size-xs);
+        line-height: var(--vui-variable-font-size-xs);
     }
 
-    &.small {
-        font-size: 10px;
+    &.small, &.s {
+        font-size: var(--vui-variable-font-size-s);
+        line-height: var(--vui-variable-font-size-s);
     }
 
-    &.large {
-        font-size: 16px;
+    &.large, &.l {
+        font-size: var(--vui-variable-font-size-l);
+        line-height: var(--vui-variable-font-size-l);
     }
 
-    &.extra-large {
-        font-size: 20px;
+    &.xlarge, &.xl {
+        font-size: var(--vui-variable-font-size-xl);
+        line-height: var(--vui-variable-font-size-xl);
     }
 
     .icon {
         position: absolute;
-        top: 0.25rem;
+        top: calc(var(--vui-variable-font-size-m) * 0.3);
         right: 0.5rem;
         z-index: 10;
+
+        &.xsmall, &.xs {
+            top: calc(var(--vui-variable-font-size-xs) * 0.3);
+        }
+    
+        &.small, &.s {
+            top: calc(var(--vui-variable-font-size-s) * 0.3);
+        }
+    
+        &.large, &.l {
+            top: calc(var(--vui-variable-font-size-l) * 0.3);
+        }
+    
+        &.xlarge, &.xl {
+            top: calc(var(--vui-variable-font-size-xl) * 0.3);
+        }
     }
 }
 
 .dropdown {
     cursor: pointer;
-    overflow-x: hidden;
     position: absolute;
-    top: 2rem;
+    overflow-x: hidden;
+    width: 100%;
     z-index: 20;
     outline: none;
-    color: $main-color;
-    background-color: $back-color;
-    border: 2px solid $main-color;
+    padding: 0.25rem 0 0 0;
+    box-sizing: border-box;
+    color: var(--vui-color-primary);
+    font-size: var(--vui-variable-font-size-m);
+    background-color: var(--vui-color-background-darker);
+    border: var(--vui-variable-border) solid var(--vui-color-primary);
     border-top-width: 0;
-    border-radius: 0 0 0.5rem 0.5rem;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    padding: 0.25rem 0;
-    width: calc(100% - 4px);
+    border-radius: 0 0 var(--vui-variable-radius-small) var(--vui-variable-radius-small);
+    box-shadow: var(--vui-color-box-shadow);
+
+    top: calc(var(--vui-variable-font-size-m) + var(--vui-variable-padding));
+
+    &.xsmall, &.xs {
+        top: calc(var(--vui-variable-font-size-xs) + var(--vui-variable-padding));
+    }
+
+    &.small, &.s {
+        top: calc(var(--vui-variable-font-size-s) + var(--vui-variable-padding));
+    }
+
+    &.large, &.l {
+        top: calc(var(--vui-variable-font-size-l) + var(--vui-variable-padding));
+    }
+
+    &.xlarge, &.xl {
+        top: calc(var(--vui-variable-font-size-xl) + var(--vui-variable-padding));
+    }
 
     .option {
         flex: 1;
-        padding: 0.25rem 0.5rem;
+        padding: var(--vui-variable-padding-xs) var(--vui-variable-padding-s);
         word-break: break-all;
 
         &:hover {
-            color: white;
-            background-color: $main-color;
+            color: var(--vui-color-highlight);
+            background-color: var(--vui-color-primary);
         }
 
-        &.extra-small {
-            font-size: 8px;
+        &.xsmall, &.xs {
+            font-size: var(--vui-variable-font-size-xs);
         }
     
-        &.small {
-            font-size: 10px;
+        &.small, &.s {
+            font-size: var(--vui-variable-font-size-s);
         }
     
-        &.large {
-            font-size: 16px;
+        &.large, &.l {
+            font-size: var(--vui-variable-font-size-l);
         }
     
-        &.extra-large {
-            font-size: 20px;
+        &.xlarge, &.xl {
+            font-size: var(--vui-variable-font-size-xl);
         }
     }
 }

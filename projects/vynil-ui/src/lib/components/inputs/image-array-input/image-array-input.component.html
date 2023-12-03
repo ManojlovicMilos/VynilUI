@@ -13,9 +13,6 @@
                     <vui-icon icon="remove"></vui-icon>
                 </div>
             </vui-view>
-            <vui-circle *ngIf="uploadFeatureEnabled" (click)="onToggleUploadModal(true)" class="upload" radius="50px">
-                <vui-icon icon="upload"></vui-icon>
-            </vui-circle>
         </vui-view>
     </vui-card>
     <vui-view padding="0 0.5rem" rowGap="0.25rem" alignItems="center">
@@ -31,6 +28,3 @@
         </vui-view>
     </vui-view>
 </vui-card>
-<vui-modal [visible]="uploadModalVisible" (closed)="onToggleUploadModal(false)">
-    <vui-image-upload (completed)="onUploadComplete($event)"></vui-image-upload>
-</vui-modal>

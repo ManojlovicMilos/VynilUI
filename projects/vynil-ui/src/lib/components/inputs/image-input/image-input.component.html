@@ -8,12 +8,6 @@
             backgroundSize="cover"
             [useBackgroundImage]="true">
         </vui-image>
-        <vui-circle *ngIf="!value && uploadFeatureEnabled" class="upload-circle" radius="2rem" (click)="onToggleUploadModal(true)">
-            <vui-icon size="button" icon="upload"></vui-icon>
-        </vui-circle>
     </vui-view>
     <vui-input [formControl]="control"></vui-input>
 </vui-view>
-<vui-modal [visible]="uploadModalVisible" (closed)="onToggleUploadModal(false)">
-    <vui-image-upload (completed)="onUploadComplete($event)"></vui-image-upload>
-</vui-modal>

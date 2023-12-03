@@ -10,6 +10,7 @@ import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/inp
 import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
 import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
+import { SelectInputDemoScreenComponent } from './screens/inputs/select-input-demo-screen/select-input-demo-screen.component';
 
 const routes: Routes = [
     {
@@ -39,6 +40,10 @@ const routes: Routes = [
     {
         path: 'toggle-input',
         component: ToggleInputDemoScreenComponent,
+    },
+    {
+        path: 'select-input',
+        component: SelectInputDemoScreenComponent,
     },
     {
         path: 'color-input',

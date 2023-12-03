@@ -4,14 +4,13 @@
     ::ng-deep .view {
         height: 2rem;
         min-height: 2rem;
-        border-radius: 0.75rem 0.75rem 0 0;
-        border: 2px solid $main-color;
-        border-width: 2px 2px 0 2px;
-        background-color: darken($back-color-2, 5%);
+        border-radius: var(--vui-variable-radius) var(--vui-variable-radius) 0 0;
+        border: var(--vui-variable-border) solid var(--vui-color-primary);
+        border-width: var(--vui-variable-border) var(--vui-variable-border) 0 var(--vui-variable-border);
+        background-color: var(--vui-color-background);
 
         .image-wrapper {
-            border-radius: 0.75rem 0.75rem 0 0;
-            background-color: darken($back-color-2, 5%);
+            background-color: var(--vui-color-background-darker);
         }
     }
 }
@@ -19,7 +18,7 @@
 vui-input {
     ::ng-deep .input{
         border-top-width: 0;
-        border-radius: 0 0 0.75rem 0.75rem;
+        border-radius: 0 0 var(--vui-variable-radius) var(--vui-variable-radius);
     }
 }
 
@@ -32,13 +31,13 @@ vui-input {
     ::ng-deep {
         .view {
             border-width: 0;
-            transition: background ease 0.5s;
+            transition: background ease var(--vui-variable-transition-length);
         }
     }
 
     &:hover {
         ::ng-deep .view {
-            background-color: lighten($main-color, 15%);
+            background-color: var(--vui-color-primary-lighter);
         }
     }
 }
