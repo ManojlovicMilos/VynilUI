@@ -1,0 +1,43 @@
+:host {
+    display: flex;
+}
+
+input {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: var(--vui-color-primary);
+    padding: var(--vui-variable-padding-s);
+    border-radius: var(--vui-variable-radius-s);
+    font-size: var(--vui-variable-font-size-m);
+    background-color: var(--vui-color-background-darker);
+
+    &.has-border {
+        border: 2px solid var(--vui-color-primary);
+    }
+
+    &.xsmall, &.xs {
+        font-size: var(--vui-variable-font-size-xs);
+    }
+
+    &.small, &.s {
+        font-size: var(--vui-variable-font-size-s);
+    }
+
+    &.large, &.l {
+        font-size: var(--vui-variable-font-size-l);
+    }
+
+    &.xlarge, &.xl {
+        font-size: var(--vui-variable-font-size-xl);
+    }
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}

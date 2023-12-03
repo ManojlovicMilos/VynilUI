@@ -1,0 +1,28 @@
+.button {
+    cursor: pointer;
+    filter: brightness(90%);
+    display: flex;
+    align-items: center;
+    color: var(--vui-color-text);
+    font-size: var(--vui-variable-font-size-m);
+    background-color: var(--vui-color-primary);
+    border-radius: var(--vui-variable-radius-s);
+    padding: var(--vui-variable-padding-s) var(--vui-variable-padding);
+    
+
+    &.lean {
+        padding: var(--vui-variable-padding-xs) var(--vui-variable-padding-s);
+    }
+
+    &.disabled {
+        opacity: 0.5;
+    }
+
+    &.centered {
+        justify-content: center;
+    }
+
+    &:not(.disabled):hover {
+        filter: brightness(105%);
+    }
+}

@@ -1,0 +1,7 @@
+<img
+    [ngClass]="size + ' ' + (actionable ? 'actionable' : '') + ' ' + (disabled ? 'disabled' : '')"
+    [ngStyle]="{
+        'transform': 'rotate(' + rotation + 'deg)'
+    }"
+    [src]="icon ? './assets/icons/' + icon + '.svg' : ''"
+/>

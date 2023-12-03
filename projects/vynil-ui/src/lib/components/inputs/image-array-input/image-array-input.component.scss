@@ -1,0 +1,58 @@
+@import '../../../../../styles/variables';
+
+.image-url-input {
+    ::ng-deep .card {
+        min-width: 250px;
+        padding: 0 0 0.75rem 0;
+    }
+
+    .variants-box {
+        ::ng-deep .card {
+            border: none;
+            margin-bottom: 0.5rem;
+            background-color: $back-color;
+            min-width: 16rem;
+            min-height: 3.2rem;
+            padding: 0.5rem;
+        }
+
+        .variant {
+            position: relative;
+
+            .icon-float {
+                cursor: pointer;
+                border-radius: 50%;
+                position: absolute;
+                width: 50px;
+                height: 50px;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                opacity: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: rgba(#000, 0.3);
+                transition: opacity 0.25s ease;
+            }
+    
+            &:hover {
+                .icon-float {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .upload {
+        ::ng-deep .view {
+            cursor: pointer;
+            background-color: $back-color-2;
+            transition: background 0.25s ease;
+
+            &:hover {
+                background-color: lighten($back-color-2, 15%);
+            }
+        }
+    }
+}

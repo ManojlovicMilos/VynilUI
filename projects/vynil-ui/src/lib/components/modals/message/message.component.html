@@ -1,0 +1,10 @@
+<ooi-modal [visible]="visible" (closed)="onClosed()">
+    <ooi-card>
+        <ooi-view class="message-wrapper">
+            <ooi-text padding="0.5rem 0.5rem 1rem 0.5rem" size="large" align="center">{{ text }}</ooi-text>
+            <ooi-view class="buttons" margin="0 0 1rem 0" flexDirection="row" justifyContent="center" padding="0 1rem" width="100%">
+                <ooi-button (clicked)="onConfirm()">{{ confirmText }}</ooi-button>
+            </ooi-view>
+        </ooi-view>
+    </ooi-card>
+</ooi-modal>

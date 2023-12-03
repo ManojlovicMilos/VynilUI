@@ -1,0 +1,48 @@
+<ooi-view [relative]="true" class="select">
+    <div
+        (click)="onToggleDropdown()"
+        class="current-value"
+        [ngClass]="{
+            'open': dropdownVisible,
+            'extra-small': textSize === 'extraSmall',
+            'small': textSize === 'small',
+            'large': textSize === 'large',
+            'extra-large': textSize === 'extraLarge',
+            'header': textSize === 'header'
+        }"
+        [ngStyle]="{
+            'width': width,
+            'height': height,
+            'max-width': maxWidth,
+            'max-height': maxHeight,
+            'min-width': minWidth,
+            'min-height': minHeight,
+            'margin': margin,
+            'padding': padding
+        }">
+        <span>{{ selectedValue?.text || emptyText }}</span>
+        <ooi-icon
+            class="icon"
+            icon="caret"
+            size="medium"
+            [rotation]="dropdownVisible ? 0 : 180">
+        </ooi-icon>
+    </div>
+    <div *ngIf="dropdownVisible" class="dropdown">
+        <ooi-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
+            <option
+                *ngFor="let option of options; trackBy:identify"
+                (click)="onSelectOption(option)"
+                class="option"
+                [ngClass]="{
+                    'extra-small': textSize === 'extraSmall',
+                    'small': textSize === 'small',
+                    'large': textSize === 'large',
+                    'extra-large': textSize === 'extraLarge',
+                    'header': textSize === 'header'
+                }">
+                {{ option.text }}
+            </option>
+        </ooi-view>
+    </div>
+</ooi-view>

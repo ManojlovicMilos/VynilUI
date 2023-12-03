@@ -1,0 +1,35 @@
+.card {
+    border: none;
+    border-radius: var(--vui-variable-radius);
+    background-color: var(--vui-color-background-lighter);
+
+    &.dark {
+        background-color: var(--vui-color-background-darker);
+    }
+
+    &.border {
+        border: var(--vui-variable-border) solid var(--vui-color-primary);
+
+        &.active:hover {
+            border: var(--vui-variable-border) solid var(--vui-color-highlight);
+        }
+    }
+
+    &.has-tabs {
+        border-radius: 0 var(--vui-variable-padding) var(--vui-variable-padding) var(--vui-variable-padding);
+    }
+
+    &.no-overflow {
+        overflow: hidden;
+    }
+
+    &.active {
+        cursor: pointer;
+        transition: var(--vui-variable-transition-length) ease;
+        background-color: var(--vui-color-background-lighter);
+
+        &:hover {
+            background-color: var(--vui-color-primary);
+        }
+    }
+}

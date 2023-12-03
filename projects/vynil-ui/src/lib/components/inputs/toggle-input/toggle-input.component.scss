@@ -1,0 +1,41 @@
+.toggle {
+    cursor: pointer;
+    filter: saturate(0);
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 2.6rem;
+    height: 1.6rem;
+    padding: 0 0.1rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--vui-color-primary);
+    background-color: var(--vui-color-background-darker);
+
+    .toggle-indicator {
+        position: absolute;
+        left: 0.1rem;
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 0.7rem;
+        transition: all 0.3s ease;
+        background-color: var(--vui-color-primary);
+    }
+
+    &.active {
+        filter: saturate(1);
+        justify-content: flex-end;
+
+        .toggle-indicator {
+            left: 1.3rem;
+        }
+    }
+
+    &.disabled {
+        border: 2px solid var(--vui-color-background-lighter);
+
+        .toggle-indicator {
+            background-color: var(--vui-color-background-lighter);
+        }
+    }
+}

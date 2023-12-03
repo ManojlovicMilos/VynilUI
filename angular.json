@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/vynil-ui",
       "sourceRoot": "projects/vynil-ui/src",
-      "prefix": "lib",
+      "prefix": "vui",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -45,7 +45,7 @@
       },
       "root": "projects/vynil-ui-demo",
       "sourceRoot": "projects/vynil-ui-demo/src",
-      "prefix": "app",
+      "prefix": "vuid",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

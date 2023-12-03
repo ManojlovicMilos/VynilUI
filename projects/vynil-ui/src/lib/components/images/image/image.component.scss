@@ -1,0 +1,18 @@
+::host {
+    margin: 0;
+    padding: 0;
+}
+
+.image-wrapper {
+    margin: 0;
+    padding: 0;
+    display: block;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--vui-color-background-darker);
+
+    &.circle {
+        border-radius: 50%;
+    }
+}

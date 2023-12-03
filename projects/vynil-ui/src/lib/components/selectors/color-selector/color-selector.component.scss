@@ -1,0 +1,10 @@
+.color {
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+
+    &.selected {
+        border: 2px solid white;
+    }
+}

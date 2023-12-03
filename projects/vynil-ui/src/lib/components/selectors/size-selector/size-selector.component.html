@@ -1,0 +1,9 @@
+<div class="size-selector">
+    <div
+        *ngFor="let size of availableSizes"
+        [ngClass]="{'selected': size === selectedSize, 'longer': size.length > 1}"
+        (click)="onSelectSize(size)"
+        class="option">
+        {{ size }}
+    </div>
+</div>

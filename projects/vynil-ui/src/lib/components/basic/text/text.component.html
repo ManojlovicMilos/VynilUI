@@ -1,0 +1,11 @@
+<div
+    class="text"
+    [ngClass]="size || ''"
+    [ngStyle]="{
+        'color': color || 'auto',
+        'padding': padding || '0',
+        'text-align': align || 'left',
+        'font-weight': weight || '400'
+    }">
+    <ng-content></ng-content>
+</div>

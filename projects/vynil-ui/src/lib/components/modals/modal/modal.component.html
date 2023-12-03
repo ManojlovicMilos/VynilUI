@@ -1,0 +1,5 @@
+<div *ngIf="visible" class="curtain" (click)="onCurtainClick()">
+    <div (click)="onContentClick($event)" class="content">
+        <ng-content></ng-content>
+    </div>
+</div>

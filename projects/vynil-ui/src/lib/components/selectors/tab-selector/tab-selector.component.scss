@@ -1,0 +1,46 @@
+@import '../../../../styles/variables';
+
+.tab {
+    display: flex;
+    height: 2.5rem;
+    padding: 0 1rem;
+    align-items: center;
+    background-color: darken($back-color-2, 10%);
+    cursor: pointer;
+
+    &.active {
+        background-color: darken($back-color-2, 5%);
+    }
+
+    &:hover {
+        background-color: $main-color;
+    }
+
+    &.attached {
+        &:first-child {
+            border-radius: 0.75rem 0 0 0;
+        }
+    
+        &:last-child {
+            border-radius: 0 0.75rem 0 0;
+        }
+
+        &:first-child:last-child {
+            border-radius: 0.75rem 0.75rem 0 0;
+        }
+    }
+
+    &.standalone {
+        &:first-child {
+            border-radius: 0.75rem 0 0 0.75rem;
+        }
+    
+        &:last-child {
+            border-radius: 0 0.75rem 0.75rem 0;
+        }
+
+        &:first-child:last-child {
+            border-radius: 0.75rem 0.75rem 0.75rem 0.75rem;
+        }
+    }
+}

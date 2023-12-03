@@ -1,0 +1,8 @@
+<div class="page"
+    [ngClass]="{ 'background': !!background }"
+    [ngStyle]="{
+        'padding': padding,
+        'background-image': !!background ? 'url(/assets/' + background + ')' : 'none'
+    }">
+    <ng-content></ng-content>
+</div>

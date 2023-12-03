@@ -1,0 +1,36 @@
+<ooi-card cardStyle="dark" class="image-url-input">
+    <ooi-card class="variants-box">
+        <ooi-view flexDirection="row" width="18rem" [wrap]="true" [scrollable]="true" justifyContent="flex-start" columnGap="0.5rem" rowGap="0.5rem">
+            <ooi-view class="variant" *ngFor="let image of values; let i = index">
+                <ooi-image
+                    [url]="image"
+                    [circle]="true"
+                    backgroundSize="cover"
+                    [useBackgroundImage]="true"
+                    [size]="{ x: 50, y: 50}">
+                </ooi-image>
+                <div (click)="onRemove(i)" class="icon-float">
+                    <ooi-icon icon="remove"></ooi-icon>
+                </div>
+            </ooi-view>
+            <ooi-circle *ngIf="uploadFeatureEnabled" (click)="onToggleUploadModal(true)" class="upload" radius="50px">
+                <ooi-icon icon="upload"></ooi-icon>
+            </ooi-circle>
+        </ooi-view>
+    </ooi-card>
+    <ooi-view padding="0 0.5rem" rowGap="0.25rem" alignItems="center">
+        <ooi-text size="medium">Image URL</ooi-text>
+        <ooi-view flexDirection="row" justifyContent="space-between" columnGap="0.25rem" alignItems="center">
+            <ooi-view alignItems="center">
+                <ooi-input [formControl]="imageUrlControl"></ooi-input>
+            </ooi-view>
+            <ooi-button (clicked)="onAdd()" [lean]="true">
+                <ooi-icon size="button" icon="add"></ooi-icon>
+                <ooi-text size="large">Add</ooi-text>
+            </ooi-button>
+        </ooi-view>
+    </ooi-view>
+</ooi-card>
+<ooi-modal [visible]="uploadModalVisible" (closed)="onToggleUploadModal(false)">
+    <ooi-image-upload (completed)="onUploadComplete($event)"></ooi-image-upload>
+</ooi-modal>

@@ -1,0 +1,13 @@
+<ooi-view flexDirection="row">
+    <div
+        class="tab"
+        *ngFor="let option of options"
+        [ngClass]="{
+            'active': option === selectedTab,
+            'attached': !standalone,
+            'standalone': standalone
+        }"
+        (click)="onSelect(option)">
+        {{ option }}
+    </div>
+</ooi-view>

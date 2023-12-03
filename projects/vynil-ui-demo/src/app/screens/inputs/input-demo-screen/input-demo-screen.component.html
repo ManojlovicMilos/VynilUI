@@ -1,0 +1,25 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Input</vui-text>
+    <vui-card>
+        <vui-view padding="1.5rem" rowGap="1.5rem">
+            <vui-view [formGroup]="form" rowGap="0.75rem">
+                <vui-text size="l">Text</vui-text>
+                <vui-input formControlName="text" size="l" type="text"></vui-input>
+                <vui-text size="l">Number</vui-text>
+                <vui-input formControlName="number" size="l" type="number"></vui-input>
+                <vui-text size="l">Password</vui-text>
+                <vui-input formControlName="password" size="l" type="password"></vui-input>
+            </vui-view>
+            <vui-view justifyContent="stretch" rowGap="0.75rem">
+                <vui-text size="large">Values</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="1rem" rowGap="0.75rem">
+                        <vui-text>Text Value - {{ value.text }}</vui-text>
+                        <vui-text>Number Value - {{ value.number }}</vui-text>
+                        <vui-text>Password Value - {{ value.password }}</vui-text>
+                    </vui-view>
+                </vui-card>
+            </vui-view>
+        </vui-view>
+    </vui-card>
+</vui-view>

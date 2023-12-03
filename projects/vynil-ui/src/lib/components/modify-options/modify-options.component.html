@@ -1,0 +1,11 @@
+<ooi-view [direction]="inline ? 'row' : 'column'" class="options" rowGap="0.5rem" columnGap="0.5rem" padding="0.25rem 0.5rem" alignItems="stretch">
+    <ooi-view  flexDirection="row" columnGap="0.5rem" justifyContent="flex-end">
+        <ooi-icon [actionable]="true" size="button" (click)="onMove($event, -1)" icon="up"></ooi-icon>
+        <ooi-icon [actionable]="true" size="button" (click)="onMove($event, 1)" icon="down"></ooi-icon>
+    </ooi-view>
+    <ooi-view flexDirection="row" columnGap="0.5rem">
+        <ooi-icon [actionable]="true" size="button" (click)="onEdit($event)" icon="edit"></ooi-icon>
+        <ooi-icon *ngIf="hasDuplicate" [actionable]="true" size="button" (click)="onDuplicate($event)" icon="copy"></ooi-icon>
+        <ooi-icon [actionable]="true" size="button" (click)="onDelete($event)" icon="remove"></ooi-icon>
+    </ooi-view>
+</ooi-view>

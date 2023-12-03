@@ -1,0 +1,15 @@
+<ooi-card>
+    <ooi-view *ngIf="url" [scrollable]="true" maxHeight="80vh" padding="0.5rem">
+        <img
+            [src]="sanitizedUrl"
+            *ngIf="isImageUrl"
+            class="ignore_events"
+        />
+        <iframe
+            [src]="sanitizedUrl"
+            *ngIf="!isImageUrl"
+            title="Character Sheet"
+            class="ignore_events">
+        </iframe>
+    </ooi-view>
+</ooi-card>

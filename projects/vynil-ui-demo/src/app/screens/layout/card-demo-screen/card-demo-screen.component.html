@@ -1,0 +1,41 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Card</vui-text>
+    <vui-view rowGap="1rem">
+        <vui-view rowGap="1rem">
+            <vui-text size="l">Regular</vui-text>
+            <vui-card>
+                <vui-view padding="1rem" rowGap="1rem">
+                    <vui-image height="10rem" width="15rem" borderRadius="1rem" url="https://cdn.stocksnap.io/img-thumbs/960w/vinyl-record_OTOSZLA6WF.jpg"></vui-image>
+                    <vui-text size="m" padding="0 0.5rem">Regular card</vui-text>
+                </vui-view>
+            </vui-card>
+        </vui-view>
+        <vui-view rowGap="1rem">
+            <vui-text size="l">Dark</vui-text>
+            <vui-card cardStyle="dark">
+                <vui-view padding="1rem" rowGap="1rem">
+                    <vui-image height="10rem" width="15rem" borderRadius="1rem" url="https://cdn.stocksnap.io/img-thumbs/960w/vinyl-record_OTOSZLA6WF.jpg"></vui-image>
+                    <vui-text size="m" padding="0 0.5rem">Darker card</vui-text>
+                </vui-view>
+            </vui-card>
+        </vui-view>
+        <vui-view rowGap="1rem">
+            <vui-text size="l">Bordered</vui-text>
+            <vui-card [hasBorder]="true">
+                <vui-view padding="1rem" rowGap="1rem">
+                    <vui-image height="10rem" width="15rem" borderRadius="1rem" url="https://cdn.stocksnap.io/img-thumbs/960w/vinyl-record_OTOSZLA6WF.jpg"></vui-image>
+                    <vui-text size="m" padding="0 0.5rem">Card with border</vui-text>
+                </vui-view>
+            </vui-card>
+        </vui-view>
+        <vui-view rowGap="1rem">
+            <vui-text size="l">Active</vui-text>
+            <vui-card cardStyle="active">
+                <vui-view padding="1rem" rowGap="1rem">
+                    <vui-image height="10rem" width="15rem" borderRadius="1rem" url="https://cdn.stocksnap.io/img-thumbs/960w/vinyl-record_OTOSZLA6WF.jpg"></vui-image>
+                    <vui-text size="m" padding="0 0.5rem">Active card</vui-text>
+                </vui-view>
+            </vui-card>
+        </vui-view>
+    </vui-view>
+</vui-view>

@@ -1,0 +1,10 @@
+<div
+    class="button"
+    [ngClass]="{
+        'lean': lean,
+        'disabled': disabled,
+        'centered': centered
+    }"
+    (click)="onClick()">
+    <ng-content></ng-content>
+</div>

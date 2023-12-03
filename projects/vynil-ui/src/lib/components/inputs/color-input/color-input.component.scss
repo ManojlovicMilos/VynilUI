@@ -1,0 +1,32 @@
+@import '../../../../../styles/variables';
+
+:host {
+    ::ng-deep {
+        .view {
+            overflow: visible !important;
+        }
+    }
+}
+
+.color {
+    cursor: pointer;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    border: 2px solid darken($back-color-2, 5%);
+
+    &.small {
+        min-width: 18px;
+        min-height: 18px;
+    }
+
+    &:hover {
+        border: 2px solid white;
+    }
+}
+
+.selector-wrapper {
+    padding: 0.5rem;
+    border-radius: 50px;
+    background-color: $back-color-2;
+}

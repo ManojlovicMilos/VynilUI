@@ -1,0 +1,10 @@
+<div
+    class="card"
+    [ngClass]="{
+        'dark': cardStyle === 'dark',
+        'active': cardStyle === 'active',
+        'border': hasBorder,
+        'has-tabs': hasTabs
+    }">
+    <ng-content></ng-content>
+</div>

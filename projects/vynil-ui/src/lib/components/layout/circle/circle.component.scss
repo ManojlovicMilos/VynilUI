@@ -1,0 +1,8 @@
+@import '../../../../../styles/variables';
+
+.circle {
+    ::ng-deep .view {
+        border-radius: 50%;
+        background-color: $back-color;
+    }
+}

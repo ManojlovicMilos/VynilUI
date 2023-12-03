@@ -1,0 +1,9 @@
+.dialog-wrapper {
+    ::ng-deep .text {
+        max-width: 250px;
+    }
+
+    .buttons {
+        width: calc(100% - 2rem);
+    }
+}

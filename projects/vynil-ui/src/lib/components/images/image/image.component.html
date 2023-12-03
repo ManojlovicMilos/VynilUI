@@ -1,0 +1,19 @@
+<div
+    *ngIf="useBackgroundImage"
+    class="image-wrapper"
+    [ngClass]="{'circle': circle}"
+    [ngStyle]="styles">
+</div>
+<img
+    *ngIf="url && !useBackgroundImage"
+    [src]="sanitizedUrl"
+    class="image-wrapper"
+    [ngClass]="{'circle': circle}"
+    [ngStyle]="styles"
+>
+<div
+    *ngIf="!url && !useBackgroundImage"
+    class="image-wrapper"
+    [ngClass]="{'circle': circle}"
+    [ngStyle]="styles"
+>
