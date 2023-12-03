@@ -11,11 +11,15 @@
     align-items: flex-start;
     justify-content: space-between;
 
+    &.wrap {
+        flex-wrap: wrap;
+    }
+
     &.scrollable {
         overflow: auto;
     }
 
-    &.wrap {
-        flex-wrap: wrap;
+    &.relative {
+        position: relative;
     }
 }

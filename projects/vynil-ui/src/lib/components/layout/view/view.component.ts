@@ -31,6 +31,7 @@ const VIEW_STYLE_INPUTS = [
 })
 export class ViewComponent {
     @Input() wrap: boolean;
+    @Input() relative: boolean;
     @Input() scrollable: boolean;
     @Input() top?: string;
     @Input() left?: string;
@@ -56,6 +57,7 @@ export class ViewComponent {
 
     public constructor() {
         this.wrap = false;
+        this.relative = false;
         this.scrollable = false;
     }
 

@@ -1,0 +1,22 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Color Input</vui-text>
+    <vui-card>
+        <vui-view padding="1.5rem" rowGap="1.5rem">
+            <vui-view [formGroup]="form" rowGap="0.75rem">
+                <vui-text size="l">Normal</vui-text>
+                <vui-color-input formControlName="small" [small]="true"></vui-color-input>
+                <vui-text size="l">Number</vui-text>
+                <vui-color-input formControlName="normal"></vui-color-input>
+            </vui-view>
+            <vui-view justifyContent="stretch" rowGap="0.75rem">
+                <vui-text size="large">Values</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="1rem" rowGap="0.75rem">
+                        <vui-text>Small Value - {{ value.small }}</vui-text>
+                        <vui-text>Normal Value - {{ value.normal }}</vui-text>
+                    </vui-view>
+                </vui-card>
+            </vui-view>
+        </vui-view>
+    </vui-card>
+</vui-view>

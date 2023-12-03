@@ -1,11 +1,11 @@
-<ooi-modal [visible]="visible" (closed)="onClosed()">
-    <ooi-card>
-        <ooi-view class="dialog-wrapper">
-            <ooi-text padding="0.5rem 0.5rem 1rem 0.5rem" size="large" align="center">{{ text }}</ooi-text>
-            <ooi-view class="buttons" margin="0 0 1rem 0" flexDirection="row" justifyContent="space-between" padding="0 1rem" width="100%">
-                <ooi-button (clicked)="onOptionSelect(1)">{{ option1Text }}</ooi-button>
-                <ooi-button (clicked)="onOptionSelect(2)">{{ option2Text }}</ooi-button>
-            </ooi-view>
-        </ooi-view>
-    </ooi-card>
-</ooi-modal>
+<vui-modal [visible]="visible" (closed)="onClosed()">
+    <vui-card>
+        <vui-view class="dialog-wrapper">
+            <vui-text padding="0.5rem 0.5rem 1rem 0.5rem" size="large" align="center">{{ text }}</vui-text>
+            <vui-view class="buttons" margin="0 0 1rem 0" flexDirection="row" justifyContent="space-between" padding="0 1rem" width="100%">
+                <vui-button (clicked)="onOptionSelect(1)">{{ option1Text }}</vui-button>
+                <vui-button (clicked)="onOptionSelect(2)">{{ option2Text }}</vui-button>
+            </vui-view>
+        </vui-view>
+    </vui-card>
+</vui-modal>

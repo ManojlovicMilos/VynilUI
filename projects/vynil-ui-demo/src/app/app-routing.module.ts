@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
 import { TextDemoScreenComponent } from './screens/basic/text-demo-screen/text-demo-screen.component';
-import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
 import { IconDemoScreenComponent } from './screens/images/icon-demo-screen/icon-demo-screen.component';
-import { ImageDemoScreenComponent } from './screens/images/image-demo-screen/image-demo-screen.component';
-import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/input-demo-screen.component';
 import { CardDemoScreenComponent } from './screens/layout/card-demo-screen/card-demo-screen.component';
 import { ViewDemoScreenComponent } from './screens/layout/view-demo-screen/view-demo-screen.component';
+import { ImageDemoScreenComponent } from './screens/images/image-demo-screen/image-demo-screen.component';
+import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/input-demo-screen.component';
+import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
+import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
 
 const routes: Routes = [
@@ -38,6 +39,10 @@ const routes: Routes = [
     {
         path: 'toggle-input',
         component: ToggleInputDemoScreenComponent,
+    },
+    {
+        path: 'color-input',
+        component: ColorInputDemoScreenComponent,
     },
     {
         path: 'view',

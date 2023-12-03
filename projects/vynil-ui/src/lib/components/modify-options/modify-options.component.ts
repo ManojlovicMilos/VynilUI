@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'ooi-modify-options',
+    selector: 'vui-modify-options',
     templateUrl: './modify-options.component.html',
     styleUrls: ['./modify-options.component.scss'],
 })

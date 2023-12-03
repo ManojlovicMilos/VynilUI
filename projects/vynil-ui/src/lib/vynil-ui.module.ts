@@ -15,6 +15,9 @@ import { CardComponent } from './components/layout/card/card.component';
 import { IconComponent } from './components/images/icon/icon.component';
 import { ImageComponent } from './components/images/image/image.component';
 import { ToggleInputComponent } from './components/inputs/toggle-input/toggle-input.component';
+import { ColorInputComponent } from './components/inputs/color-input/color-input.component';
+import { ModalComponent } from './components/modals/modal/modal.component';
+import { ColorSelectorComponent } from './components/selectors/color-selector/color-selector.component';
 
 const Components = [
     // Basic
@@ -34,6 +37,9 @@ const Components = [
     InputComponent,
     ToggleInputComponent,
     CardComponent,
+    ModalComponent,
+    ColorInputComponent,
+    ColorSelectorComponent,
 ];
 
 @NgModule({

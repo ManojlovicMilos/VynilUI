@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl } from '@angular/forms';
 
 @Component({
-    selector: 'ooi-search-input',
+    selector: 'vui-search-input',
     templateUrl: './search-input.component.html',
     styleUrls: ['./search-input.component.scss'],
 })

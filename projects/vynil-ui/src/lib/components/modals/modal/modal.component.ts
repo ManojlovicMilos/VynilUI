@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-    selector: 'ooi-modal',
+    selector: 'vui-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss'],
 })

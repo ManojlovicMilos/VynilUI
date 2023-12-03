@@ -3,7 +3,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 const POSSIBLE_COLORS = ['#D22B2B', '#50C878', '#0096FF', '#FCF55F', '#FF5F1F', '#7F00FF', '#9A9A9A', '#000000'];
 
 @Component({
-    selector: 'ooi-color-selector',
+    selector: 'vui-color-selector',
     templateUrl: './color-selector.component.html',
     styleUrls: ['./color-selector.component.scss'],
 })

@@ -15,7 +15,7 @@ import { environment } from 'src/environments/environment';
 const DEFAULT_HEIGHT = '3rem';
 
 @Component({
-    selector: 'ooi-image-input',
+    selector: 'vui-image-input',
     templateUrl: './image-input.component.html',
     styleUrls: ['./image-input.component.scss'],
     providers: [

@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 @Component({
-    selector: 'ooi-tab-selector',
+    selector: 'vui-tab-selector',
     templateUrl: './tab-selector.component.html',
     styleUrls: ['./tab-selector.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

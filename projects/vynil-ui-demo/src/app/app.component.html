@@ -9,33 +9,11 @@
         <vui-view flexDirection="row">
             <vui-sidebar headerHeight="3rem">
                 <vui-view alignItems="stretch">
-                    <vui-view alignItems="stretch">
+                    <vui-view *ngFor="let group of sidebarLinkTreeGroups" alignItems="stretch">
                         <vui-view alignItems="flex-start" justifyContent="center" padding="0 1rem" height="3rem">
-                            <vui-text size="xlarge">Basic</vui-text>
+                            <vui-text size="xlarge">{{ group.name }}</vui-text>
                         </vui-view>
-                        <vui-navigation-link path="text">Text</vui-navigation-link>
-                        <vui-navigation-link path="button">Button</vui-navigation-link>
-                    </vui-view>
-                    <vui-view alignItems="stretch">
-                        <vui-view alignItems="flex-start" justifyContent="center" padding="0 1rem" height="3rem">
-                            <vui-text size="xlarge">Forms</vui-text>
-                        </vui-view>
-                        <vui-navigation-link path="input">Input</vui-navigation-link>
-                        <vui-navigation-link path="toggle-input">Toggle Input</vui-navigation-link>
-                    </vui-view>
-                    <vui-view alignItems="stretch">
-                        <vui-view alignItems="flex-start" justifyContent="center" padding="0 1rem" height="3rem">
-                            <vui-text size="xlarge">Images</vui-text>
-                        </vui-view>
-                        <vui-navigation-link path="icon">Icon</vui-navigation-link>
-                        <vui-navigation-link path="image">Image</vui-navigation-link>
-                    </vui-view>
-                    <vui-view alignItems="stretch">
-                        <vui-view alignItems="flex-start" justifyContent="center" padding="0 1rem" height="3rem">
-                            <vui-text size="xlarge">Layout</vui-text>
-                        </vui-view>
-                        <vui-navigation-link path="view">View</vui-navigation-link>
-                        <vui-navigation-link path="card">Card</vui-navigation-link>
+                        <vui-navigation-link *ngFor="let item of group.items" [path]="item.link">{{ item.label }}</vui-navigation-link>
                     </vui-view>
                 </vui-view>
             </vui-sidebar>

@@ -4,7 +4,7 @@ import { TokenSize } from '../../../tokens/models/token.model';
 const SIZES: TokenSize[] = ['S', 'M', 'L', 'XL', 'XXL'];
 
 @Component({
-    selector: 'ooi-size-selector',
+    selector: 'vui-size-selector',
     templateUrl: './size-selector.component.html',
     styleUrls: ['./size-selector.component.scss'],
 })

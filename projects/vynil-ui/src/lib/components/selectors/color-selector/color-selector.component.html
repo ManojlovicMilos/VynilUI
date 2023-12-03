@@ -1,4 +1,4 @@
-<ooi-view flexDirection="row" columnGap="0.25rem" alignItems="center">
+<vui-view flexDirection="row" columnGap="0.25rem" alignItems="center">
     <div
         (click)="onSelectColor(color)"
         *ngFor="let color of availableColors"
@@ -6,4 +6,4 @@
         [ngClass]="{'selected': selectedColor === color}"
         class="color">
     </div>
-</ooi-view>
+</vui-view>

@@ -5,7 +5,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 const DEFAULT_VALUE = '#0096FF';
 
 @Component({
-    selector: 'ooi-color-input',
+    selector: 'vui-color-input',
     templateUrl: './color-input.component.html',
     styleUrls: ['./color-input.component.scss'],
     providers: [

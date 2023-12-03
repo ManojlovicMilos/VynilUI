@@ -4,7 +4,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 @Component({
-    selector: 'ooi-image-array-input',
+    selector: 'vui-image-array-input',
     templateUrl: './image-array-input.component.html',
     styleUrls: ['./image-array-input.component.scss'],
     providers: [

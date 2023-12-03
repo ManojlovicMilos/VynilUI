@@ -8,7 +8,7 @@ import {
 const DEFAULT_CONFIRM = 'OK';
 
 @Component({
-    selector: 'ooi-message',
+    selector: 'vui-message',
     templateUrl: './message.component.html',
     styleUrls: ['./message.component.scss'],
 })

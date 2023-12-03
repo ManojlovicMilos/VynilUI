@@ -5,6 +5,6 @@
     border-radius: 50%;
 
     &.selected {
-        border: 2px solid white;
+        border: var(--vui-variable-border) solid var(--vui-variable-primary);
     }
 }

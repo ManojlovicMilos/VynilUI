@@ -4,7 +4,7 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 const IMAGE_URL_EXTENSIONS = ['.PNG', '.JPG', '.JPEG'];
 
 @Component({
-    selector: 'ooi-page-view',
+    selector: 'vui-page-view',
     templateUrl: './page-view.component.html',
     styleUrls: ['./page-view.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

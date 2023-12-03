@@ -1,19 +1,19 @@
-<ooi-view class="image-input-wrapper" alignItems="stretch">
-    <ooi-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch">
-        <ooi-image
+<vui-view class="image-input-wrapper" alignItems="stretch">
+    <vui-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch">
+        <vui-image
             *ngIf="value"
             width="100%"
             [url]="value"
             [height]="height"
             backgroundSize="cover"
             [useBackgroundImage]="true">
-        </ooi-image>
-        <ooi-circle *ngIf="!value && uploadFeatureEnabled" class="upload-circle" radius="2rem" (click)="onToggleUploadModal(true)">
-            <ooi-icon size="button" icon="upload"></ooi-icon>
-        </ooi-circle>
-    </ooi-view>
-    <ooi-input [formControl]="control"></ooi-input>
-</ooi-view>
-<ooi-modal [visible]="uploadModalVisible" (closed)="onToggleUploadModal(false)">
-    <ooi-image-upload (completed)="onUploadComplete($event)"></ooi-image-upload>
-</ooi-modal>
+        </vui-image>
+        <vui-circle *ngIf="!value && uploadFeatureEnabled" class="upload-circle" radius="2rem" (click)="onToggleUploadModal(true)">
+            <vui-icon size="button" icon="upload"></vui-icon>
+        </vui-circle>
+    </vui-view>
+    <vui-input [formControl]="control"></vui-input>
+</vui-view>
+<vui-modal [visible]="uploadModalVisible" (closed)="onToggleUploadModal(false)">
+    <vui-image-upload (completed)="onUploadComplete($event)"></vui-image-upload>
+</vui-modal>

@@ -14,6 +14,7 @@ import { IconDemoScreenComponent } from './screens/images/icon-demo-screen/icon-
 import { ImageDemoScreenComponent } from './screens/images/image-demo-screen/image-demo-screen.component';
 import { CardDemoScreenComponent } from './screens/layout/card-demo-screen/card-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
+import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-de
     IconDemoScreenComponent,
     ImageDemoScreenComponent,
     CardDemoScreenComponent,
-    ToggleInputDemoScreenComponent
+    ToggleInputDemoScreenComponent,
+    ColorInputDemoScreenComponent
   ],
   imports: [
     VynilUIModule,

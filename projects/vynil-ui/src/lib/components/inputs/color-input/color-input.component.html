@@ -1,11 +1,11 @@
-<ooi-view [relative]="true">
+<vui-view [relative]="true">
     <div (click)="toggleSelectorVisible(true)" [ngClass]="{'small': small}" [ngStyle]="{'backgroundColor': colorValue}" class="color"></div>
-    <ooi-modal [visible]="colorSelectorVisible">
+    <vui-modal [visible]="colorSelectorVisible">
         <div class="selector-wrapper">
-            <ooi-color-selector
+            <vui-color-selector
                 [selectedColor]="colorValue"
                 (selected)="onColorSelect($event)">
-            </ooi-color-selector>
+            </vui-color-selector>
         </div>
-    </ooi-modal>
-</ooi-view>
+    </vui-modal>
+</vui-view>

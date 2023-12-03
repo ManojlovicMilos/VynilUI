@@ -13,7 +13,7 @@
     min-width: 30px;
     min-height: 30px;
     border-radius: 50%;
-    border: 2px solid darken($back-color-2, 5%);
+    border: var(--vui-variable-border) solid var(--vui-color-background-darker);
 
     &.small {
         min-width: 18px;
@@ -21,12 +21,12 @@
     }
 
     &:hover {
-        border: 2px solid white;
+        border: var(--vui-variable-border) solid var(--vui-color-background-highlight);
     }
 }
 
 .selector-wrapper {
-    padding: 0.5rem;
     border-radius: 50px;
-    background-color: $back-color-2;
+    background-color: var(--vui-color-background);
+    padding: var(--vui-variable-padding-small);
 }

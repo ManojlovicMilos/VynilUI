@@ -1,4 +1,4 @@
-<ooi-view [relative]="true" class="select">
+<vui-view [relative]="true" class="select">
     <div
         (click)="onToggleDropdown()"
         class="current-value"
@@ -21,15 +21,15 @@
             'padding': padding
         }">
         <span>{{ selectedValue?.text || emptyText }}</span>
-        <ooi-icon
+        <vui-icon
             class="icon"
             icon="caret"
             size="medium"
             [rotation]="dropdownVisible ? 0 : 180">
-        </ooi-icon>
+        </vui-icon>
     </div>
     <div *ngIf="dropdownVisible" class="dropdown">
-        <ooi-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
+        <vui-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
             <option
                 *ngFor="let option of options; trackBy:identify"
                 (click)="onSelectOption(option)"
@@ -43,6 +43,6 @@
                 }">
                 {{ option.text }}
             </option>
-        </ooi-view>
+        </vui-view>
     </div>
-</ooi-view>
+</vui-view>

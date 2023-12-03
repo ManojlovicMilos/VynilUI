@@ -12,7 +12,7 @@ export interface SelectInputOption<T> {
 }
 
 @Component({
-    selector: 'ooi-select-input',
+    selector: 'vui-select-input',
     templateUrl: './select-input.component.html',
     styleUrls: ['./select-input.component.scss'],
     providers: [

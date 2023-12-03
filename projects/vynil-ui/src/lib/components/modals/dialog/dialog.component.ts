@@ -9,7 +9,7 @@ const DEFAULT_OPTION_1 = 'Yes';
 const DEFAULT_OPTION_2 = 'No';
 
 @Component({
-    selector: 'ooi-dialog',
+    selector: 'vui-dialog',
     templateUrl: './dialog.component.html',
     styleUrls: ['./dialog.component.scss'],
 })
