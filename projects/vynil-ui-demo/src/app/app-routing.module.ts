@@ -8,6 +8,7 @@ import { ViewDemoScreenComponent } from './screens/layout/view-demo-screen/view-
 import { ImageDemoScreenComponent } from './screens/images/image-demo-screen/image-demo-screen.component';
 import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/input-demo-screen.component';
 import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
+import { ImageInputDemoScreenComponent } from './screens/inputs/image-input-demo-screen/image-input-demo-screen.component';
 import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
 import { SelectInputDemoScreenComponent } from './screens/inputs/select-input-demo-screen/select-input-demo-screen.component';
@@ -48,6 +49,10 @@ const routes: Routes = [
     {
         path: 'color-input',
         component: ColorInputDemoScreenComponent,
+    },
+    {
+        path: 'image-input',
+        component: ImageInputDemoScreenComponent,
     },
     {
         path: 'view',

@@ -1,0 +1,19 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Image Input</vui-text>
+    <vui-card>
+        <vui-view padding="1.5rem" rowGap="1.5rem">
+            <vui-view [formGroup]="form" rowGap="0.75rem" style="width: 100%">
+                <vui-text size="l">Image URL</vui-text>
+                <vui-image-input formControlName="url"></vui-image-input>
+            </vui-view>
+            <vui-view rowGap="0.75rem" alignItems="stretch" style="width: 100%; max-width: 80rem" overflow="hidden">
+                <vui-text size="large">Values</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="1rem" rowGap="0.75rem">
+                        <vui-text>Image URL Value - {{ value.url }}</vui-text>
+                    </vui-view>
+                </vui-card>
+            </vui-view>
+        </vui-view>
+    </vui-card>
+</vui-view>

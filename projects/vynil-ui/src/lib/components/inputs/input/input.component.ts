@@ -12,8 +12,15 @@ import {
 } from '@angular/forms';
 import { VynilUITextSize } from '../../basic/text/text.component';
 
-const DEFAULT_ALIGN = 'left';
-const DEFAULT_PADDING = '0.5rem';
+const INPUT_STYLE_INPUTS = [
+    'flex',
+    'margin',
+    'padding',
+    'width',
+    'maxWidth',
+    'minWidth',
+    'textAlign',
+]
 
 export type InputType = 'text' | 'number' | 'password';
 
@@ -30,16 +37,15 @@ export type InputType = 'text' | 'number' | 'password';
     ],
 })
 export class InputComponent implements ControlValueAccessor {
-    @Input() size: string;
-    @Input() flex: string;
-    @Input() align: string;
-    @Input() width: string;
-    @Input() maxWidth: string;
-    @Input() minWidth: string;
-    @Input() margin: string;
-    @Input() padding: string;
+    @Input() textSize: string;
+    @Input() flex?: string;
+    @Input() margin?: string;
+    @Input() padding?: string;
+    @Input() align?: string;
+    @Input() width?: string;
+    @Input() maxWidth?: string;
+    @Input() minWidth?: string;
     @Input() type: InputType;
-    @Input() hasBorder?: boolean;
     @Output() changed: EventEmitter<string>;
 
     public control: FormControl<string>;
@@ -57,15 +63,8 @@ export class InputComponent implements ControlValueAccessor {
     }
 
     constructor() {
-        this.size = VynilUITextSize.Medium;
-        this.flex = 'none';
-        this.align = DEFAULT_ALIGN;
-        this.width = 'auto';
-        this.maxWidth = 'none';
-        this.margin = '0';
-        this.minWidth = '0';
         this.type = 'text';
-        this.padding = DEFAULT_PADDING;
+        this.textSize = VynilUITextSize.Medium;
         this.control = new FormControl<string>('', { nonNullable: true });
         this.changed = new EventEmitter<string>();
         this.control.valueChanges.subscribe((value) => {
@@ -89,5 +88,16 @@ export class InputComponent implements ControlValueAccessor {
 
     public registerOnTouched(onTouched: (value: string) => void): void {
         this.onTouch = onTouched;
+    }
+
+    public get styleObject(): { [key: string]: string } {
+        let styleObject: { [key: string]: string } = {};
+        const componentObject = this as unknown as { [key: string]: string };
+        INPUT_STYLE_INPUTS.forEach((propertyName: string) => {
+            if (componentObject[propertyName]) {
+                styleObject[propertyName] = componentObject[propertyName];
+            }
+        });
+        return styleObject;
     }
 }

@@ -12,7 +12,7 @@
 
     &.open {
         border: var(--vui-variable-border) solid var(--vui-color-primary);
-        border-radius: var(--vui-variable-padding-s) var(--vui-variable-padding-s) 0 0;
+        border-radius: var(--vui-variable-radius-s) var(--vui-variable-radius-s) 0 0;
 
         .icon {
             top: calc(var(--vui-variable-font-size-m) * 0.4);

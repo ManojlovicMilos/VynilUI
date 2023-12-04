@@ -31,6 +31,7 @@ export class AppComponent {
                     { label: 'Select Input', link: 'select-input' },
                     { label: 'Toggle Input', link: 'toggle-input' },
                     { label: 'Color Input', link: 'color-input' },
+                    { label: 'Image Input', link: 'image-input' },
                 ]
             },
             { 

@@ -12,6 +12,7 @@ const VIEW_STYLE_INPUTS = [
     'maxHeight',
     'minWidth',
     'minHeight',
+    'overflow',
     'margin',
     'padding',
     'rowGap',
@@ -44,6 +45,7 @@ export class ViewComponent {
     @Input() maxHeight?: string;
     @Input() minWidth?: string;
     @Input() minHeight?: string;
+    @Input() overflow?: string;
     @Input() margin?: string;
     @Input() padding?: string;
     @Input() rowGap?: string;
@@ -59,10 +61,6 @@ export class ViewComponent {
         this.wrap = false;
         this.relative = false;
         this.scrollable = false;
-    }
-
-    public get styleObjectJSON(): string {
-        return JSON.stringify(this.styleObject);
     }
 
     public get styleObject(): { [key: string]: string } {

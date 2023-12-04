@@ -10,9 +10,8 @@ import {
     NG_VALUE_ACCESSOR,
     ControlValueAccessor,
 } from '@angular/forms';
-import { environment } from 'src/environments/environment';
 
-const DEFAULT_HEIGHT = '3rem';
+const DEFAULT_HEIGHT = '10rem';
 
 @Component({
     selector: 'vui-image-input',
@@ -27,18 +26,14 @@ const DEFAULT_HEIGHT = '3rem';
     ],
 })
 export class ImageInputComponent implements ControlValueAccessor {
-    @Input() height: string;
+    @Input() width?: string;
+    @Input() height?: string;
     @Output() changed: EventEmitter<string>;
 
-    public uploadModalVisible: boolean;
     public control: FormControl<string | null>;
 
     public onTouch: (value: string) => void;
     public onChange: (value: string) => void;
-
-    public get uploadFeatureEnabled(): boolean {
-        return environment.featureFlags.upload;
-    }
 
     public get value(): string {
         return this.control.value || '';
@@ -54,7 +49,6 @@ export class ImageInputComponent implements ControlValueAccessor {
 
     constructor() {
         this.height = DEFAULT_HEIGHT;
-        this.uploadModalVisible = false;
         this.control = new FormControl<string>('');
         this.changed = new EventEmitter<string>();
         this.control.valueChanges.subscribe((value: string | null) => {
@@ -76,14 +70,5 @@ export class ImageInputComponent implements ControlValueAccessor {
 
     public registerOnTouched(onTouched: (value: string) => void): void {
         this.onTouch = onTouched;
-    }
-
-    public onToggleUploadModal(visible: boolean): void {
-        this.uploadModalVisible = visible;
-    }
-
-    public onUploadComplete(url: string): void {
-        this.control.patchValue(url);
-        this.uploadModalVisible = false;
     }
 }

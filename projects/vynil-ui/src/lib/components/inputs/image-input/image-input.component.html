@@ -1,13 +1,12 @@
 <vui-view class="image-input-wrapper" alignItems="stretch">
-    <vui-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch">
+    <vui-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch" overflow="hidden">
         <vui-image
             *ngIf="value"
-            width="100%"
             [url]="value"
+            [width]="width"
             [height]="height"
-            backgroundSize="cover"
-            [useBackgroundImage]="true">
+            backgroundSize="cover">
         </vui-image>
     </vui-view>
-    <vui-input [formControl]="control"></vui-input>
+    <vui-input flex="1" [formControl]="control"></vui-input>
 </vui-view>

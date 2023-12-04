@@ -19,6 +19,7 @@ import { ColorInputComponent } from './components/inputs/color-input/color-input
 import { ModalComponent } from './components/modals/modal/modal.component';
 import { ColorSelectorComponent } from './components/selectors/color-selector/color-selector.component';
 import { SelectInputComponent } from './components/inputs/select-input/select-input.component';
+import { ImageInputComponent } from './components/inputs/image-input/image-input.component';
 
 const Components = [
     // Basic
@@ -39,6 +40,7 @@ const Components = [
     ToggleInputComponent,
     CardComponent,
     ModalComponent,
+    ImageInputComponent,
     ColorInputComponent,
     SelectInputComponent,
     ColorSelectorComponent,
