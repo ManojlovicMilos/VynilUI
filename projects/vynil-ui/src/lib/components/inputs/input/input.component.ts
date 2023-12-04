@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import {
     Input,
-    Output,
     Component,
-    EventEmitter,
 } from '@angular/core';
 import {
     FormControl,
@@ -20,7 +18,7 @@ const INPUT_STYLE_INPUTS = [
     'maxWidth',
     'minWidth',
     'textAlign',
-]
+];
 
 export type InputType = 'text' | 'number' | 'password';
 
@@ -46,7 +44,6 @@ export class InputComponent implements ControlValueAccessor {
     @Input() maxWidth?: string;
     @Input() minWidth?: string;
     @Input() type: InputType;
-    @Output() changed: EventEmitter<string>;
 
     public control: FormControl<string>;
 
@@ -66,7 +63,6 @@ export class InputComponent implements ControlValueAccessor {
         this.type = 'text';
         this.textSize = VynilUITextSize.Medium;
         this.control = new FormControl<string>('', { nonNullable: true });
-        this.changed = new EventEmitter<string>();
         this.control.valueChanges.subscribe((value) => {
             if (this.type === 'number') {
                 // TODO: Find a proper fix for this one, perhaps separate number input

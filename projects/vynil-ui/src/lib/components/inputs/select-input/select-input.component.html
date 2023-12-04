@@ -14,11 +14,23 @@
             icon="caret"
             size="medium"
             [ngClass]="textSize"
-            [rotation]="dropdownVisible ? 0 : 180">
+            [rotation]="180">
         </vui-icon>
     </div>
     <div *ngIf="dropdownVisible" class="dropdown" [ngClass]="textSize">
         <vui-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
+            <div
+                (click)="onToggleDropdown(false)"
+                class="option unselectable"
+                [ngClass]="textSize">
+                {{ selectedValue?.text || emptyText }}
+                <vui-icon
+                    class="icon open"
+                    icon="caret"
+                    size="medium"
+                    [ngClass]="textSize">
+                </vui-icon>
+            </div>
             <option
                 *ngFor="let option of options; trackBy:identify"
                 (click)="onSelectOption(option)"

@@ -13,17 +13,28 @@ export enum VynilUIIconSize {
     styleUrls: ['./icon.component.scss'],
 })
 export class IconComponent {
-    @Input() icon?: string;
     @Input() size: string;
-    @Input() rotation: number;
-    @Input() disabled: boolean;
-    @Input() actionable: boolean;
+    @Input() icon?: string;
+    @Input() color?: string;
+    @Input() rotation?: number;
+    @Input() disabled?: boolean;
+    @Input() actionable?: boolean;
     public IconSizeEnum = VynilUIIconSize;
 
     constructor() {
         this.size = VynilUIIconSize.Medium;
-        this.disabled = false;
-        this.actionable = false;
-        this.rotation = 0;
+    }
+
+    public get styleObject(): { [key: string]: string } {
+        let styleObject: { [key: string]: string } = {};
+        if (this.color) {
+            styleObject['backgroundColor'] = this.color;
+        }
+        if (this.rotation) {
+            styleObject['transform'] = 'rotate(' + this.rotation + 'deg)';
+        }
+        styleObject['mask'] = 'url(./assets/icons/' + (this.icon || 'cog') + '.svg)  no-repeat center',
+        styleObject['-webkit-mask'] = styleObject['mask'];
+        return styleObject;
     }
 }

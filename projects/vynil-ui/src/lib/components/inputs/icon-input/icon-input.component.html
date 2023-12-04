@@ -1,0 +1,11 @@
+<vui-view
+    class="icon-input"
+    flexDirection="row"
+    width="100%"
+    [relative]="true"
+    justifyContent="stretch">
+    <vui-view *ngIf="icon" class="icon" alignItems="center" justifyContent="center" height="2rem" width="2rem" padding="0.1rem 0 0 0">
+        <vui-icon size="button" [icon]="icon"></vui-icon>
+    </vui-view>
+    <vui-input class="input" padding="0.5rem 0.5rem 0.5rem 1.75rem" [formControl]="control" type="text"></vui-input>
+</vui-view>

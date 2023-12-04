@@ -14,18 +14,18 @@ import {
 const DEFAULT_HEIGHT = '10rem';
 
 @Component({
-    selector: 'vui-image-input',
-    templateUrl: './image-input.component.html',
-    styleUrls: ['./image-input.component.scss'],
+    selector: 'vui-image-url-input',
+    templateUrl: './image-url-input.component.html',
+    styleUrls: ['./image-url-input.component.scss'],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: ImageInputComponent,
+            useExisting: ImageURLInputComponent,
             multi: true,
         },
     ],
 })
-export class ImageInputComponent implements ControlValueAccessor {
+export class ImageURLInputComponent implements ControlValueAccessor {
     @Input() width?: string;
     @Input() height?: string;
     @Output() changed: EventEmitter<string>;

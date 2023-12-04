@@ -6,12 +6,13 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    public sidebarLinkTreeGroups: { name: string, items: { label: string, link: string }[] }[];
+    public sidebarLinkTreeGroups: { name: string, open?: boolean, items: { label: string, link: string }[] }[];
 
     public constructor() {
         this.sidebarLinkTreeGroups = [
             { 
                 name: 'Basic',
+                open: true,
                 items: [
                     { label: 'Text', link: 'text' },
                     { label: 'Button', link: 'button' },
@@ -19,6 +20,7 @@ export class AppComponent {
             },
             { 
                 name: 'Images',
+                open: true,
                 items: [
                     { label: 'Icon', link: 'icon' },
                     { label: 'Image', link: 'image' },
@@ -26,6 +28,7 @@ export class AppComponent {
             },
             { 
                 name: 'Forms',
+                open: true,
                 items: [
                     { label: 'Input', link: 'input' },
                     { label: 'Select Input', link: 'select-input' },

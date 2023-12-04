@@ -13,26 +13,6 @@
     &.open {
         border: var(--vui-variable-border) solid var(--vui-color-primary);
         border-radius: var(--vui-variable-radius-s) var(--vui-variable-radius-s) 0 0;
-
-        .icon {
-            top: calc(var(--vui-variable-font-size-m) * 0.4);
-    
-            &.xsmall, &.xs {
-                top: calc(var(--vui-variable-font-size-xs) * 0.4);
-            }
-        
-            &.small, &.s {
-                top: calc(var(--vui-variable-font-size-s) * 0.4);
-            }
-        
-            &.large, &.l {
-                top: calc(var(--vui-variable-font-size-l) * 0.4);
-            }
-        
-            &.xlarge, &.xl {
-                top: calc(var(--vui-variable-font-size-xl) * 0.4);
-            }
-        }
     }
 
     &.xsmall, &.xs {
@@ -54,27 +34,48 @@
         font-size: var(--vui-variable-font-size-xl);
         line-height: var(--vui-variable-font-size-xl);
     }
+}
 
-    .icon {
-        position: absolute;
-        top: calc(var(--vui-variable-font-size-m) * 0.3);
-        right: 0.5rem;
-        z-index: 10;
+.icon {
+    position: absolute;
+    top: calc(var(--vui-variable-font-size-m) * 0.3);
+    right: 0.5rem;
+    z-index: 10;
+
+    &.xsmall, &.xs {
+        top: calc(var(--vui-variable-font-size-xs) * 0.3);
+    }
+
+    &.small, &.s {
+        top: calc(var(--vui-variable-font-size-s) * 0.3);
+    }
+
+    &.large, &.l {
+        top: calc(var(--vui-variable-font-size-l) * 0.3);
+    }
+
+    &.xlarge, &.xl {
+        top: calc(var(--vui-variable-font-size-xl) * 0.3);
+    }
+
+    &.open {
+        right: calc(0.5rem - var(--vui-variable-border));
+        top: calc(var(--vui-variable-font-size-m) * 0.4);
 
         &.xsmall, &.xs {
-            top: calc(var(--vui-variable-font-size-xs) * 0.3);
+            top: calc(var(--vui-variable-font-size-xs) * 0.4);
         }
     
         &.small, &.s {
-            top: calc(var(--vui-variable-font-size-s) * 0.3);
+            top: calc(var(--vui-variable-font-size-s) * 0.4);
         }
     
         &.large, &.l {
-            top: calc(var(--vui-variable-font-size-l) * 0.3);
+            top: calc(var(--vui-variable-font-size-l) * 0.4);
         }
     
         &.xlarge, &.xl {
-            top: calc(var(--vui-variable-font-size-xl) * 0.3);
+            top: calc(var(--vui-variable-font-size-xl) * 0.4);
         }
     }
 }
@@ -86,38 +87,33 @@
     width: 100%;
     z-index: 20;
     outline: none;
-    padding: 0.25rem 0 0 0;
+    padding: 0;
     box-sizing: border-box;
     color: var(--vui-color-primary);
     font-size: var(--vui-variable-font-size-m);
     background-color: var(--vui-color-background-darker);
     border: var(--vui-variable-border) solid var(--vui-color-primary);
-    border-top-width: 0;
-    border-radius: 0 0 var(--vui-variable-radius-small) var(--vui-variable-radius-small);
+    border-radius: var(--vui-variable-radius-s);
     box-shadow: var(--vui-color-box-shadow);
 
-    top: calc(var(--vui-variable-font-size-m) + var(--vui-variable-padding));
-
-    &.xsmall, &.xs {
-        top: calc(var(--vui-variable-font-size-xs) + var(--vui-variable-padding));
-    }
-
-    &.small, &.s {
-        top: calc(var(--vui-variable-font-size-s) + var(--vui-variable-padding));
-    }
-
-    &.large, &.l {
-        top: calc(var(--vui-variable-font-size-l) + var(--vui-variable-padding));
-    }
-
-    &.xlarge, &.xl {
-        top: calc(var(--vui-variable-font-size-xl) + var(--vui-variable-padding));
-    }
+    top: 0;
 
     .option {
         flex: 1;
         padding: var(--vui-variable-padding-xs) var(--vui-variable-padding-s);
         word-break: break-all;
+
+        &.unselectable {
+            position: relative;
+            filter: brightness(110%);
+            padding-top: var(--vui-variable-padding-xs);
+            color: var(--vui-color-primary-lighter);
+
+            &:hover {
+                background-color: transparent;
+                color: var(--vui-color-primary-lighter);
+            }
+        }
 
         &:hover {
             color: var(--vui-color-highlight);

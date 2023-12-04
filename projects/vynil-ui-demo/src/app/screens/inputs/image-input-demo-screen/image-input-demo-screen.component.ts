@@ -9,13 +9,14 @@ import { FormControl, UntypedFormGroup } from '@angular/forms';
 export class ImageInputDemoScreenComponent {
     public form: UntypedFormGroup;
 
-    public get value(): { url: string | undefined } {
+    public get value(): { url: string | undefined, urls: string[] } {
         return this.form.value;
     }
 
     public constructor() {
         this.form = new UntypedFormGroup({
             url: new FormControl<string | undefined>(undefined),
+            urls: new FormControl<string[]>([]),
         });
     }
 }

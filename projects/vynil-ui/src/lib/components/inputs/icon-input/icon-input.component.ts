@@ -1,14 +1,21 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Component, EventEmitter, Output } from '@angular/core';
-import { ControlValueAccessor, FormControl } from '@angular/forms';
+import { Component, Input } from '@angular/core';
+import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'vui-search-input',
-    templateUrl: './search-input.component.html',
-    styleUrls: ['./search-input.component.scss'],
+    selector: 'vui-icon-input',
+    templateUrl: './icon-input.component.html',
+    styleUrls: ['./icon-input.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: IconInputComponent,
+            multi: true,
+        },
+    ],
 })
-export class SearchInputComponent implements ControlValueAccessor {
-    @Output() queryChange: EventEmitter<string>;
+export class IconInputComponent implements ControlValueAccessor {
+    @Input() icon?: string;
 
     public control: FormControl<string>;
 
@@ -17,7 +24,7 @@ export class SearchInputComponent implements ControlValueAccessor {
 
     set value(value: string){
         if (value !== this.control.value) {
-            this.control.setValue(value);
+            this.control.setValue(value);    
         }
         this.onChange(value);
         this.onTouch(value);
@@ -25,7 +32,6 @@ export class SearchInputComponent implements ControlValueAccessor {
 
     public constructor() {
         this.control = new FormControl<string>('', { nonNullable: true });
-        this.queryChange = new EventEmitter<string>();
         this.control.valueChanges.subscribe((value) => {
             this.writeValue(value);
         });

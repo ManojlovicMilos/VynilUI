@@ -3,6 +3,6 @@
 .circle {
     ::ng-deep .view {
         border-radius: 50%;
-        background-color: $back-color;
+        background-color: var(--vui-color-background);
     }
 }

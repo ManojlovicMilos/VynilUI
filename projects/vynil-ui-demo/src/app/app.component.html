@@ -2,20 +2,18 @@
     <vui-view>
         <vui-header>
             <vui-view flexDirection="row" alignItems="center" columnGap="1rem">
-                <vui-icon icon="vynil-dark"></vui-icon>
-                <vui-text size="xlarge" weight="700" color="black">Vynil-UI Demo</vui-text>
+                <vui-icon color="var(--vui-color-background-darker)" icon="vynil-dark"></vui-icon>
+                <vui-text size="xlarge" weight="700" color="var(--vui-color-background-darker)">Vynil-UI Demo</vui-text>
             </vui-view>
         </vui-header>
         <vui-view flexDirection="row">
             <vui-sidebar headerHeight="3rem">
-                <vui-view alignItems="stretch">
-                    <vui-view *ngFor="let group of sidebarLinkTreeGroups" alignItems="stretch">
-                        <vui-view alignItems="flex-start" justifyContent="center" padding="0 1rem" height="3rem">
-                            <vui-text size="xlarge">{{ group.name }}</vui-text>
-                        </vui-view>
-                        <vui-navigation-link *ngFor="let item of group.items" [path]="item.link">{{ item.label }}</vui-navigation-link>
-                    </vui-view>
-                </vui-view>
+                <vui-navigation-group
+                    *ngFor="let group of sidebarLinkTreeGroups"
+                    [name]="group.name"
+                    [open]="group.open">
+                    <vui-navigation-link *ngFor="let item of group.items" [path]="item.link">{{ item.label }}</vui-navigation-link>
+                </vui-navigation-group>
             </vui-sidebar>
             <vui-view padding="2rem" height="calc(100vh - 3rem)" [scrollable]="true" justifyContent="flex-start">
                 <router-outlet></router-outlet>

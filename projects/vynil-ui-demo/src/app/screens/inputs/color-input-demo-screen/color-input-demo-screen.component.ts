@@ -15,8 +15,8 @@ export class ColorInputDemoScreenComponent {
 
   public constructor() {
       this.form = new UntypedFormGroup({
-          small: new FormControl<string>('#FF0000'),
-          normal: new FormControl<string>('#0000FF'),
+          small: new FormControl<string>('#FCF55F'),
+          normal: new FormControl<string>('#50C878'),
       });
   }
 }

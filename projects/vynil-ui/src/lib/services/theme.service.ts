@@ -7,6 +7,7 @@ export interface Theme {
         radius: number;
         padding: number;
         transitionLength: number;
+        colorContrastFactor: number,
         iconSizes: number[];
         fontSizes: number[];
     };
@@ -22,6 +23,7 @@ export interface Theme {
 const UNIT_REM = 'rem';
 const UNIT_PIXEL = 'px';
 const UNIT_SECONDS = 's';
+const UNIT_PERCENTAGE = '%';
 const ICON_SIZE_NAMES = ['s', 'button', 'm', 'l', 'xl'];
 const FONT_SIZE_NAMES = ['xs', 's', 'm', 'l', 'xl', 'h3', 'h2', 'h1'];
 const DEFAULT_THEME: Theme = {
@@ -30,8 +32,9 @@ const DEFAULT_THEME: Theme = {
         radius: 1,
         padding: 1,
         transitionLength: 0.5,
+        colorContrastFactor: 10,
         iconSizes: [0.75, 0.9, 1.5, 2.75, 5],
-        fontSizes: [8, 10, 14, 16, 20, 42, 64, 92],
+        fontSizes: [10, 12, 16, 20, 24, 42, 64, 92],
     },
     colors: {
         text: '#FFFFFF',
@@ -124,8 +127,8 @@ export class ThemeService {
     private updateColor(element: HTMLElement, propertyName: string, value: string, skipAlts?: boolean): void {
         element.style.setProperty('--vui-color-' + propertyName, value);
         if (!skipAlts) {
-            element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 15%)');
-            element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF 15%)');
+            element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 ' + this.theme.value.variables.colorContrastFactor + UNIT_PERCENTAGE);
+            element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF ' + this.theme.value.variables.colorContrastFactor + UNIT_PERCENTAGE);
         }
     }
 

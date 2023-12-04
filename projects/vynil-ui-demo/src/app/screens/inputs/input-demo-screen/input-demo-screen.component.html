@@ -9,6 +9,8 @@
                 <vui-input formControlName="number" flex="1" type="number"></vui-input>
                 <vui-text size="l">Password</vui-text>
                 <vui-input formControlName="password" flex="1" type="password"></vui-input>
+                <vui-text size="l">Input with Icon</vui-text>
+                <vui-icon-input formControlName="inputWithIcon" icon="search" flex="1"></vui-icon-input>
             </vui-view>
             <vui-view rowGap="0.75rem" alignItems="stretch" style="width: 100%">
                 <vui-text size="large">Values</vui-text>
@@ -17,6 +19,7 @@
                         <vui-text>Text Value - {{ value.text }}</vui-text>
                         <vui-text>Number Value - {{ value.number }}</vui-text>
                         <vui-text>Password Value - {{ value.password }}</vui-text>
+                        <vui-text>Input with Icon Value - {{ value.inputWithIcon }}</vui-text>
                     </vui-view>
                 </vui-card>
             </vui-view>

@@ -1,0 +1,11 @@
+<vui-view class="navigation-group" alignItems="stretch">
+    <vui-view (click)="onToggle()" class="navigation-group-header" flexDirection="row" alignItems="stretch" justifyContent="space-between" padding="0 1rem">
+        <vui-view alignItems="flex-start" justifyContent="center"  height="3rem">
+            <vui-text size="xlarge">{{ name }}</vui-text>
+        </vui-view>
+        <vui-icon icon="caret" [rotation]="open ? 0 : 180"></vui-icon>
+    </vui-view>
+    <ng-container *ngIf="open">
+        <ng-content></ng-content>
+    </ng-container>
+</vui-view>

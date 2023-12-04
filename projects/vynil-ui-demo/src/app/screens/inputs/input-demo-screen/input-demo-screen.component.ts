@@ -9,7 +9,12 @@ import { FormControl, UntypedFormGroup } from '@angular/forms';
 export class InputDemoScreenComponent {
     public form: UntypedFormGroup;
 
-    public get value(): { text: string, number: number, password: string } {
+    public get value(): {
+        text: string,
+        number: number,
+        password: string,
+        inputWithIcon: string,
+    } {
         return this.form.value;
     }
 
@@ -18,6 +23,7 @@ export class InputDemoScreenComponent {
             text: new FormControl<string>('Text'),
             number: new FormControl<number>(123),
             password: new FormControl<string>('secret'),
+            inputWithIcon: new FormControl<string>('Text with icon'),
         });
     }
 }

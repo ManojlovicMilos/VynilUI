@@ -1,15 +1,14 @@
-.image-url-input {
+.image-array-input {
     ::ng-deep .card {
-        min-width: 250px;
-        padding: 0 0 0.75rem 0;
+        background-color: var(--vui-color-background);
+        padding: var(--vui-variable-padding-xs) var(--vui-variable-padding-xs) var(--vui-variable-padding-s) var(--vui-variable-padding-xs);
     }
 
     .variants-box {
         ::ng-deep .card {
             border: none;
+            max-width: 300px;
             margin-bottom: 0.5rem;
-            background-color: $back-color;
-            min-width: 16rem;
             min-height: 3.2rem;
             padding: 0.5rem;
         }
@@ -19,7 +18,6 @@
 
             .icon-float {
                 cursor: pointer;
-                border-radius: 50%;
                 position: absolute;
                 width: 50px;
                 height: 50px;
@@ -31,7 +29,7 @@
                 align-items: center;
                 justify-content: center;
                 background-color: rgba(#000, 0.3);
-                transition: opacity 0.25s ease;
+                transition: opacity var(--vui-variable-transition-length) ease;
             }
     
             &:hover {
@@ -42,15 +40,15 @@
         }
     }
 
-    .upload {
-        ::ng-deep .view {
-            cursor: pointer;
-            background-color: $back-color-2;
-            transition: background 0.25s ease;
+    .add-input {
+        ::ng-deep .input {
+            border-radius: var(--vui-variable-radius-s) 0 0 var(--vui-variable-radius-s);
+        }
+    }
 
-            &:hover {
-                background-color: lighten($back-color-2, 15%);
-            }
+    .add-button {
+        ::ng-deep .button {
+            border-radius: 0 var(--vui-variable-radius-s) var(--vui-variable-radius-s) 0;
         }
     }
 }

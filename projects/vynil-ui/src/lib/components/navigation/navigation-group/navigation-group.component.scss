@@ -1,0 +1,29 @@
+.navigation-group {
+    cursor: pointer;
+    
+    
+
+    .navigation-group-header {
+        ::ng-deep {
+            .text {
+                color: var(--vui-color-text-darker);
+                transition: color var(--vui-variable-transition-length) ease;
+            }
+
+            .icon {
+                background-color: var(--vui-color-text-darker);
+                transition: background var(--vui-variable-transition-length) ease;
+            }
+
+            &:hover {
+                .text {
+                    color: var(--vui-color-primary-lighter);
+                }
+    
+                .icon {
+                    background-color: var(--vui-color-primary-lighter);
+                }
+            }
+        }
+    }
+}

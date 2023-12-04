@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 
 @Component({
@@ -15,6 +15,7 @@ import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from
     ],
 })
 export class ImageArrayInputComponent  implements ControlValueAccessor {
+    @Input() roundEntries: boolean;
     @Output() changed: EventEmitter<string>;
 
     public values: string[];
@@ -35,6 +36,7 @@ export class ImageArrayInputComponent  implements ControlValueAccessor {
 
     public constructor() {
         this.values = [];
+        this.roundEntries = true;
         this.changed = new EventEmitter<string>();
         this.imageUrlControl = new FormControl<string | null>('', Validators.required);
         this.onTouch = () => {};

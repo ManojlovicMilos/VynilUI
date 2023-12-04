@@ -1,13 +1,14 @@
-<vui-card cardStyle="dark" class="image-url-input">
+<vui-card cardStyle="dark" class="image-array-input">
     <vui-card class="variants-box">
-        <vui-view flexDirection="row" width="18rem" [wrap]="true" [scrollable]="true" justifyContent="flex-start" columnGap="0.5rem" rowGap="0.5rem">
+        <vui-view flexDirection="row" [wrap]="true" [scrollable]="true" justifyContent="flex-start" columnGap="0.75rem" rowGap="0.5rem">
             <vui-view class="variant" *ngFor="let image of values; let i = index">
                 <vui-image
                     [url]="image"
-                    [circle]="true"
+                    [circle]="roundEntries"
                     backgroundSize="cover"
                     [useBackgroundImage]="true"
-                    [size]="{ x: 50, y: 50}">
+                    width="50px"
+                    height="50px">
                 </vui-image>
                 <div (click)="onRemove(i)" class="icon-float">
                     <vui-icon icon="remove"></vui-icon>
@@ -19,9 +20,9 @@
         <vui-text size="medium">Image URL</vui-text>
         <vui-view flexDirection="row" justifyContent="space-between" columnGap="0.25rem" alignItems="center">
             <vui-view alignItems="center">
-                <vui-input [formControl]="imageUrlControl"></vui-input>
+                <vui-input class="add-input" [formControl]="imageUrlControl"></vui-input>
             </vui-view>
-            <vui-button (clicked)="onAdd()" [lean]="true">
+            <vui-button class="add-button" (clicked)="onAdd()">
                 <vui-icon size="button" icon="add"></vui-icon>
                 <vui-text size="large">Add</vui-text>
             </vui-button>
