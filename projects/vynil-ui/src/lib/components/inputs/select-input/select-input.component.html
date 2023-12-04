@@ -13,8 +13,9 @@
             class="icon"
             icon="caret"
             size="medium"
-            [ngClass]="textSize"
-            [rotation]="180">
+            color="var(--vui-color-primary)"
+            [rotation]="180"
+            [ngClass]="textSize">
         </vui-icon>
     </div>
     <div *ngIf="dropdownVisible" class="dropdown" [ngClass]="textSize">
@@ -25,9 +26,10 @@
                 [ngClass]="textSize">
                 {{ selectedValue?.text || emptyText }}
                 <vui-icon
-                    class="icon open"
                     icon="caret"
                     size="medium"
+                    class="icon open"
+                    color="var(--vui-color-primary-lighter)"
                     [ngClass]="textSize">
                 </vui-icon>
             </div>

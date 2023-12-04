@@ -3,45 +3,6 @@
     align-items: center;
 }
 
-img {
-    color: var(--vui-color-text);
-    width: var(--vui-variable-icon-size-m);
-    height: var(--vui-variable-icon-size-m);
-
-    &.small, &.s {
-        width: var(--vui-variable-icon-size-s);
-        height: var(--vui-variable-icon-size-s);
-    }
-
-    &.button, &.b {
-        width: var(--vui-variable-icon-size-button);
-        height: var(--vui-variable-icon-size-button);
-    }
-
-    &.large, &.l {
-        width: var(--vui-variable-icon-size-l);
-        height: var(--vui-variable-icon-size-l);
-    }
-
-    &.extra-large, &.xl {
-        width: var(--vui-variable-icon-size-xl);
-        height: var(--vui-variable-icon-size-xl);
-    }
-
-    &.actionable {
-        opacity: 0.85;
-        cursor: pointer;
-
-        &:hover:not(.disabled) {
-            opacity: 1;
-        }
-    }
-
-    &.disabled {
-        opacity: 0.3;
-    }
-}
-
 .icon {
     background-color: var(--vui-color-text);
     width: var(--vui-variable-icon-size-m);
