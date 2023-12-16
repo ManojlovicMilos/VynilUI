@@ -23,6 +23,8 @@ import { ColorSelectorComponent } from './components/selectors/color-selector/co
 import { NavigationLinkComponent } from './components/navigation/navigation-link/navigation-link.component';
 import { ImageArrayInputComponent } from './components/inputs/image-array-input/image-array-input.component';
 import { NavigationGroupComponent } from './components/navigation/navigation-group/navigation-group.component';
+import { MessageComponent } from './components/modals/message/message.component';
+import { DialogComponent } from './components/modals/dialog/dialog.component';
 
 const Components = [
     // Basic
@@ -47,6 +49,8 @@ const Components = [
     SidebarComponent,
     // Modals
     ModalComponent,
+    MessageComponent,
+    DialogComponent,
     // Navigation
     LinkComponent,
     NavigationLinkComponent,

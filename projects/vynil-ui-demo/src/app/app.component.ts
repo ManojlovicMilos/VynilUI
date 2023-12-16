@@ -38,6 +38,15 @@ export class AppComponent {
                 ]
             },
             { 
+                name: 'Modal',
+                open: true,
+                items: [
+                    { label: 'Modal', link: 'modal' },
+                    { label: 'Message', link: 'message' },
+                    { label: 'Dialog', link: 'dialog' },
+                ]
+            },
+            { 
                 name: 'Layout',
                 items: [
                     { label: 'View', link: 'view' },

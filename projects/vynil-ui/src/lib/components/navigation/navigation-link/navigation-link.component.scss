@@ -1,10 +1,8 @@
 .navigation-link {
-    filter: brightness(90%);
+    user-select: none;
     transition: all var(--vui-variable-transition-length) ease;
-    background-color: var(--vui-color-background-lighter);
 
     &:hover {
-        filter: brightness(105%);
         background-color: var(--vui-color-primary);
     }
 }

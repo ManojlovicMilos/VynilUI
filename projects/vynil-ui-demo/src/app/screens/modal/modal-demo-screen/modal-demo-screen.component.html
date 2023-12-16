@@ -1,0 +1,13 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Modal</vui-text>
+    <vui-view rowGap="0.75rem">
+        <vui-button (clicked)="onToggle()">Show Modal</vui-button>
+    </vui-view>
+</vui-view>
+<vui-modal [visible]="modalVisible" (closed)="onToggle()">
+    <vui-card>
+        <vui-view padding="2rem">
+            <vui-text size="xl">Modal content</vui-text>
+        </vui-view>
+    </vui-card>
+</vui-modal>

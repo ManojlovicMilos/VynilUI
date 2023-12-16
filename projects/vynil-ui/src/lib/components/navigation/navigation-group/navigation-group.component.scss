@@ -1,9 +1,9 @@
 .navigation-group {
     cursor: pointer;
     
-    
-
     .navigation-group-header {
+        user-select: none;
+        
         ::ng-deep {
             .text {
                 color: var(--vui-color-text-darker);
@@ -25,5 +25,10 @@
                 }
             }
         }
+    }
+
+    .navigation-group-content {
+        border-radius:  0 var(--vui-variable-radius-l) 0 0;
+        background: var(--vui-color-background-darker);
     }
 }

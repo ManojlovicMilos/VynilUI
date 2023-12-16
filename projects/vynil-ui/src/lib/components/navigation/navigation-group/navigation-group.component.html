@@ -5,7 +5,7 @@
         </vui-view>
         <vui-icon icon="caret" [rotation]="open ? 0 : 180"></vui-icon>
     </vui-view>
-    <ng-container *ngIf="open">
+    <div *ngIf="open" class="navigation-group-content">
         <ng-content></ng-content>
-    </ng-container>
+    </div>
 </vui-view>

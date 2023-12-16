@@ -5,9 +5,12 @@ import { TextDemoScreenComponent } from './screens/basic/text-demo-screen/text-d
 import { IconDemoScreenComponent } from './screens/images/icon-demo-screen/icon-demo-screen.component';
 import { CardDemoScreenComponent } from './screens/layout/card-demo-screen/card-demo-screen.component';
 import { ViewDemoScreenComponent } from './screens/layout/view-demo-screen/view-demo-screen.component';
+import { ModalDemoScreenComponent } from './screens/modal/modal-demo-screen/modal-demo-screen.component';
 import { ImageDemoScreenComponent } from './screens/images/image-demo-screen/image-demo-screen.component';
 import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/input-demo-screen.component';
 import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
+import { DialogDemoScreenComponent } from './screens/modal/dialog-demo-screen/dialog-demo-screen.component';
+import { MessageDemoScreenComponent } from './screens/modal/message-demo-screen/message-demo-screen.component';
 import { ImageInputDemoScreenComponent } from './screens/inputs/image-input-demo-screen/image-input-demo-screen.component';
 import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
@@ -53,6 +56,18 @@ const routes: Routes = [
     {
         path: 'image-input',
         component: ImageInputDemoScreenComponent,
+    },
+    {
+        path: 'modal',
+        component: ModalDemoScreenComponent,
+    },
+    {
+        path: 'message',
+        component: MessageDemoScreenComponent,
+    },
+    {
+        path: 'dialog',
+        component: DialogDemoScreenComponent,
     },
     {
         path: 'view',

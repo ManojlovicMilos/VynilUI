@@ -1,8 +1,8 @@
 <vui-modal [visible]="visible" (closed)="onClosed()">
     <vui-card>
-        <vui-view class="dialog-wrapper">
+        <vui-view padding="1rem 0.75rem" class="dialog-wrapper" alignItems="center">
             <vui-text padding="0.5rem 0.5rem 1rem 0.5rem" size="large" align="center">{{ text }}</vui-text>
-            <vui-view class="buttons" margin="0 0 1rem 0" flexDirection="row" justifyContent="space-between" padding="0 1rem" width="100%">
+            <vui-view flexDirection="row" columnGap="0.5rem">
                 <vui-button (clicked)="onOptionSelect(1)">{{ option1Text }}</vui-button>
                 <vui-button (clicked)="onOptionSelect(2)">{{ option2Text }}</vui-button>
             </vui-view>

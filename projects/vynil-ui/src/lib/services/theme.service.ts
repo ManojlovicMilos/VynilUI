@@ -31,7 +31,7 @@ const DEFAULT_THEME: Theme = {
         border: 2,
         radius: 1,
         padding: 1,
-        transitionLength: 0.5,
+        transitionLength: 0.3,
         colorContrastFactor: 10,
         iconSizes: [0.75, 0.9, 1.5, 2.75, 5],
         fontSizes: [10, 12, 16, 20, 24, 42, 64, 92],

@@ -1,8 +1,8 @@
 <vui-modal [visible]="visible" (closed)="onClosed()">
     <vui-card>
-        <vui-view class="message-wrapper">
+        <vui-view padding="1rem 0.75rem" class="message-wrapper" alignItems="stretch">
             <vui-text padding="0.5rem 0.5rem 1rem 0.5rem" size="large" align="center">{{ text }}</vui-text>
-            <vui-view class="buttons" margin="0 0 1rem 0" flexDirection="row" justifyContent="center" padding="0 1rem" width="100%">
+            <vui-view flexDirection="row" justifyContent="center">
                 <vui-button (clicked)="onConfirm()">{{ confirmText }}</vui-button>
             </vui-view>
         </vui-view>
