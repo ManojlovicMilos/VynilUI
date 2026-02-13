@@ -4,7 +4,8 @@ import { FormControl, UntypedFormGroup } from '@angular/forms';
 @Component({
     selector: 'vuid-toggle-input-demo-screen',
     templateUrl: './toggle-input-demo-screen.component.html',
-    styleUrls: ['./toggle-input-demo-screen.component.scss']
+    styleUrls: ['./toggle-input-demo-screen.component.scss'],
+    standalone: false
 })
 export class ToggleInputDemoScreenComponent {
     public form: UntypedFormGroup;

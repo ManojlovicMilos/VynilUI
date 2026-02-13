@@ -6,7 +6,8 @@ import {
 @Component({
     selector: 'vui-navigation-link',
     templateUrl: './navigation-link.component.html',
-    styleUrls: ['./navigation-link.component.scss']
+    styleUrls: ['./navigation-link.component.scss'],
+    standalone: false
 })
 export class NavigationLinkComponent {
     @Input() path?: string;

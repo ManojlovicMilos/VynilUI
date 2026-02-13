@@ -6,6 +6,7 @@ const DEFAULT_RADIUS = '3rem';
     selector: 'vui-circle',
     templateUrl: './circle.component.html',
     styleUrls: ['./circle.component.scss'],
+    standalone: false
 })
 export class CircleComponent {
     @Input() radius: string;

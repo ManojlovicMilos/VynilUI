@@ -11,6 +11,7 @@ const DEFAULT_CONFIRM = 'OK';
     selector: 'vui-message',
     templateUrl: './message.component.html',
     styleUrls: ['./message.component.scss'],
+    standalone: false
 })
 export class MessageComponent {
     @Input() text: string;

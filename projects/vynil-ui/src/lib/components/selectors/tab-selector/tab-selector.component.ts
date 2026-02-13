@@ -11,6 +11,7 @@ import {
     templateUrl: './tab-selector.component.html',
     styleUrls: ['./tab-selector.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class TabSelectorComponent {
     @Input() options: string[];

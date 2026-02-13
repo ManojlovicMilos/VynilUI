@@ -3,7 +3,8 @@ import { Component, Input } from '@angular/core';
 @Component({
     selector: 'vui-navigation-group',
     templateUrl: './navigation-group.component.html',
-    styleUrls: ['./navigation-group.component.scss']
+    styleUrls: ['./navigation-group.component.scss'],
+    standalone: false
 })
 export class NavigationGroupComponent {
     @Input() name?: string;

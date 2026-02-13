@@ -12,6 +12,7 @@ const DEFAULT_OPTION_2 = 'No';
     selector: 'vui-dialog',
     templateUrl: './dialog.component.html',
     styleUrls: ['./dialog.component.scss'],
+    standalone: false
 })
 export class DialogComponent {
     @Input() text: string;

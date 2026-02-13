@@ -23,6 +23,7 @@ import {
             multi: true,
         },
     ],
+    standalone: false
 })
 export class ToggleInputComponent implements ControlValueAccessor {
     @Input() disabled?: boolean;

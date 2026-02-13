@@ -22,6 +22,7 @@ export interface SelectInputOption<T> {
             multi: true,
         },
     ],
+    standalone: false
 })
 export class SelectInputComponent<T> implements ControlValueAccessor {
     @Input() textSize: string;

@@ -8,6 +8,7 @@ const DEFAULT_PADDING = '2rem 3rem';
     selector: 'vui-page',
     templateUrl: './page.component.html',
     styleUrls: ['./page.component.scss'],
+    standalone: false
 })
 export class PageComponent {
     @Input() padding: string;

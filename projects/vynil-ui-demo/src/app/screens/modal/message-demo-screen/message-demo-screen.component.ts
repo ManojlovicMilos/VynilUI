@@ -4,7 +4,8 @@ import { FormControl } from '@angular/forms';
 @Component({
     selector: 'vuid-message-demo-screen',
     templateUrl: './message-demo-screen.component.html',
-    styleUrls: ['./message-demo-screen.component.scss']
+    styleUrls: ['./message-demo-screen.component.scss'],
+    standalone: false
 })
 export class MessageDemoScreenComponent {
     public messageVisible: boolean;

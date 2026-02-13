@@ -6,6 +6,7 @@ export type VynilUICardStyle = 'default' | 'dark' | 'active';
     selector: 'vui-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.scss'],
+    standalone: false
 })
 export class CardComponent {
     @Input() hasTabs?: boolean;

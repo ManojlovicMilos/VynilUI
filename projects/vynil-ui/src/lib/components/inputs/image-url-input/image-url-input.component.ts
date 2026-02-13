@@ -24,6 +24,7 @@ const DEFAULT_HEIGHT = '10rem';
             multi: true,
         },
     ],
+    standalone: false
 })
 export class ImageURLInputComponent implements ControlValueAccessor {
     @Input() width?: string;

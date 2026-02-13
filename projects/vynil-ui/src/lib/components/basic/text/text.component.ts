@@ -14,6 +14,7 @@ export enum VynilUITextSize {
     selector: 'vui-text',
     templateUrl: './text.component.html',
     styleUrls: ['./text.component.scss'],
+    standalone: false
 })
 export class TextComponent {
     @Input() size?: string;

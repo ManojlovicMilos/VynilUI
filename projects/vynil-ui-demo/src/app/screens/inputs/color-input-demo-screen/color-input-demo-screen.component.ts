@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { FormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'vuid-color-input-demo-screen',
-  templateUrl: './color-input-demo-screen.component.html',
-  styleUrls: ['./color-input-demo-screen.component.scss']
+    selector: 'vuid-color-input-demo-screen',
+    templateUrl: './color-input-demo-screen.component.html',
+    styleUrls: ['./color-input-demo-screen.component.scss'],
+    standalone: false
 })
 export class ColorInputDemoScreenComponent {
   public form: UntypedFormGroup;

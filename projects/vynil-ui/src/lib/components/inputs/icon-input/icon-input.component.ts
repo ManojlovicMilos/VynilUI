@@ -13,6 +13,7 @@ import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR } from '@angular/f
             multi: true,
         },
     ],
+    standalone: false
 })
 export class IconInputComponent implements ControlValueAccessor {
     @Input() icon?: string;

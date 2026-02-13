@@ -3,7 +3,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 const PIPE_KEY = 'initials';
 const UNKNOWN_VALUE = 'N/A';
 
-@Pipe({ name: PIPE_KEY })
+@Pipe({
+    name: PIPE_KEY,
+    standalone: false
+})
 export class InitialsPipe implements PipeTransform {
     transform(value: string): string {
         if (!value) {

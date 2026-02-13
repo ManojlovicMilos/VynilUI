@@ -5,7 +5,8 @@ import { Theme, ThemeService } from '../../../services/theme.service';
 @Component({
     selector: 'vui-sidebar',
     templateUrl: './sidebar.component.html',
-    styleUrls: ['./sidebar.component.scss']
+    styleUrls: ['./sidebar.component.scss'],
+    standalone: false
 })
 export class SidebarComponent {
     @Input() width: string;

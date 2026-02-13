@@ -29,6 +29,7 @@ const VIEW_STYLE_INPUTS = [
     selector: 'vui-view',
     templateUrl: './view.component.html',
     styleUrls: ['./view.component.scss'],
+    standalone: false
 })
 export class ViewComponent {
     @Input() wrap: boolean;

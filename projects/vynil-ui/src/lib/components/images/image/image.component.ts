@@ -11,6 +11,7 @@ interface IStyleObject {
     selector: 'vui-image',
     templateUrl: './image.component.html',
     styleUrls: ['./image.component.scss'],
+    standalone: false
 })
 export class ImageComponent {
     @Input() url?: string;

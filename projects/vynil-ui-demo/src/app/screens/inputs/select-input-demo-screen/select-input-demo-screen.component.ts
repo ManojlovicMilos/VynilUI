@@ -12,7 +12,8 @@ const SELECT_OPTIONS: SelectInputOption<string>[] = [
 @Component({
     selector: 'vuid-select-input-demo-screen',
     templateUrl: './select-input-demo-screen.component.html',
-    styleUrls: ['./select-input-demo-screen.component.scss']
+    styleUrls: ['./select-input-demo-screen.component.scss'],
+    standalone: false
 })
 export class SelectInputDemoScreenComponent {
     public options: SelectInputOption<string>[];

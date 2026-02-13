@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     selector: 'vui-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.scss'],
+    standalone: false
 })
 export class ModalComponent {
     @Input() visible: boolean;

@@ -13,6 +13,7 @@ import { ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR, Validators } from
             multi: true,
         },
     ],
+    standalone: false
 })
 export class ImageArrayInputComponent  implements ControlValueAccessor {
     @Input() roundEntries: boolean;

@@ -11,6 +11,7 @@ export enum VynilUIIconSize {
     selector: 'vui-icon',
     templateUrl: './icon.component.html',
     styleUrls: ['./icon.component.scss'],
+    standalone: false
 })
 export class IconComponent {
     @Input() size: string;

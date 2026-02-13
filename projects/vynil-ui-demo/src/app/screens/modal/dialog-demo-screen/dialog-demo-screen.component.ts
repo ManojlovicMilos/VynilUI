@@ -4,7 +4,8 @@ import { FormControl } from '@angular/forms';
 @Component({
     selector: 'vuid-dialog-demo-screen',
     templateUrl: './dialog-demo-screen.component.html',
-    styleUrls: ['./dialog-demo-screen.component.scss']
+    styleUrls: ['./dialog-demo-screen.component.scss'],
+    standalone: false
 })
 export class DialogDemoScreenComponent {
     public dialogVisible: boolean;

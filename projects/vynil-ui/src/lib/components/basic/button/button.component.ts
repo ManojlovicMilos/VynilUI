@@ -9,6 +9,7 @@ import {
     selector: 'vui-button',
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.scss'],
+    standalone: false
 })
 export class ButtonComponent {
     @Input() lean?: boolean;

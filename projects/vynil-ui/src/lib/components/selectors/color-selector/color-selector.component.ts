@@ -6,6 +6,7 @@ const POSSIBLE_COLORS = ['#D22B2B', '#50C878', '#0096FF', '#FCF55F', '#FF5F1F', 
     selector: 'vui-color-selector',
     templateUrl: './color-selector.component.html',
     styleUrls: ['./color-selector.component.scss'],
+    standalone: false
 })
 export class ColorSelectorComponent {
     @Input() selectedColor?: string;

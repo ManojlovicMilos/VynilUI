@@ -33,6 +33,7 @@ export type InputType = 'text' | 'number' | 'password';
             multi: true,
         },
     ],
+    standalone: false
 })
 export class InputComponent implements ControlValueAccessor {
     @Input() textSize: string;

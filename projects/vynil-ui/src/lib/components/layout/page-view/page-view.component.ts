@@ -8,6 +8,7 @@ const IMAGE_URL_EXTENSIONS = ['.PNG', '.JPG', '.JPEG'];
     templateUrl: './page-view.component.html',
     styleUrls: ['./page-view.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: false
 })
 export class PageViewComponent {
     @Input() url: string;

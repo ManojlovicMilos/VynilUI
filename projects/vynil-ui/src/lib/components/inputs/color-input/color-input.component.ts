@@ -15,6 +15,7 @@ const DEFAULT_VALUE = '#0096FF';
             multi: true,
         },
     ],
+    standalone: false
 })
 export class ColorInputComponent implements ControlValueAccessor {
     @Input() small?: boolean;

@@ -4,7 +4,8 @@ import { FormControl, UntypedFormGroup } from '@angular/forms';
 @Component({
     selector: 'vuid-input-demo-screen',
     templateUrl: './input-demo-screen.component.html',
-    styleUrls: ['./input-demo-screen.component.scss']
+    styleUrls: ['./input-demo-screen.component.scss'],
+    standalone: false
 })
 export class InputDemoScreenComponent {
     public form: UntypedFormGroup;

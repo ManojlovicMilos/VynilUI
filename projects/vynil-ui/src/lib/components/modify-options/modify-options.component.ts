@@ -4,6 +4,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     selector: 'vui-modify-options',
     templateUrl: './modify-options.component.html',
     styleUrls: ['./modify-options.component.scss'],
+    standalone: false
 })
 export class ModifyOptionsComponent {
     @Input() inline?: boolean;

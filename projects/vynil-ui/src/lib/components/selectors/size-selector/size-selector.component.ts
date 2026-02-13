@@ -7,6 +7,7 @@ const SIZES: TokenSize[] = ['S', 'M', 'L', 'XL', 'XXL'];
     selector: 'vui-size-selector',
     templateUrl: './size-selector.component.html',
     styleUrls: ['./size-selector.component.scss'],
+    standalone: false
 })
 export class SizeSelectorComponent {
     @Input() selectedSize?: TokenSize;

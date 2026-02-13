@@ -4,7 +4,8 @@ import { RoutingService } from '../../../services/routing.service';
 @Component({
     selector: 'vui-link',
     templateUrl: './link.component.html',
-    styleUrls: ['./link.component.scss']
+    styleUrls: ['./link.component.scss'],
+    standalone: false
 })
 export class LinkComponent {
     @Input() path?: string;
