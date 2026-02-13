@@ -1,12 +1,13 @@
 <vui-view class="image-input-wrapper" alignItems="stretch">
-    <vui-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch" overflow="hidden">
-        <vui-image
-            *ngIf="value"
-            [url]="value"
-            [width]="width"
-            [height]="height"
-            backgroundSize="cover">
-        </vui-image>
-    </vui-view>
-    <vui-input flex="1" [formControl]="control"></vui-input>
+  <vui-view class="preview" [minHeight]="height" [relative]="true" alignItems="stretch" overflow="hidden">
+    @if (value) {
+      <vui-image
+        [url]="value"
+        [width]="width"
+        [height]="height"
+        backgroundSize="cover">
+      </vui-image>
+    }
+  </vui-view>
+  <vui-input flex="1" [formControl]="control"></vui-input>
 </vui-view>

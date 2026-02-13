@@ -1,23 +1,26 @@
 <vui-page padding="0">
-    <vui-view>
-        <vui-header>
-            <vui-view flexDirection="row" alignItems="center" columnGap="1rem">
-                <vui-icon color="var(--vui-color-background-darker)" icon="vynil"></vui-icon>
-                <vui-text size="xlarge" weight="700" color="var(--vui-color-background-darker)">Vynil-UI Demo</vui-text>
-            </vui-view>
-        </vui-header>
-        <vui-view flexDirection="row">
-            <vui-sidebar headerHeight="3rem">
-                <vui-navigation-group
-                    *ngFor="let group of sidebarLinkTreeGroups"
-                    [name]="group.name"
-                    [open]="group.open">
-                    <vui-navigation-link *ngFor="let item of group.items" [path]="item.link">{{ item.label }}</vui-navigation-link>
-                </vui-navigation-group>
-            </vui-sidebar>
-            <vui-view padding="2rem" height="calc(100vh - 3rem)" [scrollable]="true" justifyContent="flex-start">
-                <router-outlet></router-outlet>
-            </vui-view>
-        </vui-view>
+  <vui-view>
+    <vui-header>
+      <vui-view flexDirection="row" alignItems="center" columnGap="1rem">
+        <vui-icon color="var(--vui-color-background-darker)" icon="vynil"></vui-icon>
+        <vui-text size="xlarge" weight="700" color="var(--vui-color-background-darker)">Vynil-UI Demo</vui-text>
+      </vui-view>
+    </vui-header>
+    <vui-view flexDirection="row">
+      <vui-sidebar headerHeight="3rem">
+        @for (group of sidebarLinkTreeGroups; track group) {
+          <vui-navigation-group
+            [name]="group.name"
+            [open]="group.open">
+            @for (item of group.items; track item) {
+              <vui-navigation-link [path]="item.link">{{ item.label }}</vui-navigation-link>
+            }
+          </vui-navigation-group>
+        }
+      </vui-sidebar>
+      <vui-view padding="2rem" height="calc(100vh - 3rem)" [scrollable]="true" justifyContent="flex-start">
+        <router-outlet></router-outlet>
+      </vui-view>
     </vui-view>
+  </vui-view>
 </vui-page>

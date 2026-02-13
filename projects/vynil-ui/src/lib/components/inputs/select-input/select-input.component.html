@@ -1,45 +1,48 @@
 <vui-view [relative]="true" class="select" [width]="width" [maxWidth]="maxWidth">
-    <div
-        class="current-value"
-        (click)="onToggleDropdown()"
-        [ngClass]="textSize + (dropdownVisible ? ' open' : '')"
+  <div
+    class="current-value"
+    (click)="onToggleDropdown()"
+    [ngClass]="textSize + (dropdownVisible ? ' open' : '')"
         [ngStyle]="{
             'min-width': minWidth,
             'margin': margin,
             'padding': padding
         }">
-        <span>{{ selectedValue?.text || emptyText }}</span>
-        <vui-icon
-            class="icon"
+    <span>{{ selectedValue?.text || emptyText }}</span>
+    <vui-icon
+      class="icon"
+      icon="caret"
+      size="medium"
+      color="var(--vui-color-primary)"
+      [rotation]="180"
+      [ngClass]="textSize">
+    </vui-icon>
+  </div>
+  @if (dropdownVisible) {
+    <div class="dropdown" [ngClass]="textSize">
+      <vui-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
+        <div
+          (click)="onToggleDropdown(false)"
+          class="option unselectable"
+          [ngClass]="textSize">
+          {{ selectedValue?.text || emptyText }}
+          <vui-icon
             icon="caret"
             size="medium"
-            color="var(--vui-color-primary)"
-            [rotation]="180"
+            class="icon open"
+            color="var(--vui-color-primary-lighter)"
             [ngClass]="textSize">
-        </vui-icon>
+          </vui-icon>
+        </div>
+        @for (option of options; track identify($index, option)) {
+          <option
+            (click)="onSelectOption(option)"
+            [ngClass]="textSize"
+            class="option">
+            {{ option.text }}
+          </option>
+        }
+      </vui-view>
     </div>
-    <div *ngIf="dropdownVisible" class="dropdown" [ngClass]="textSize">
-        <vui-view rowGap="0.1rem" justifyContent="stretch" alignItems="stretch">
-            <div
-                (click)="onToggleDropdown(false)"
-                class="option unselectable"
-                [ngClass]="textSize">
-                {{ selectedValue?.text || emptyText }}
-                <vui-icon
-                    icon="caret"
-                    size="medium"
-                    class="icon open"
-                    color="var(--vui-color-primary-lighter)"
-                    [ngClass]="textSize">
-                </vui-icon>
-            </div>
-            <option
-                *ngFor="let option of options; trackBy:identify"
-                (click)="onSelectOption(option)"
-                [ngClass]="textSize"
-                class="option">
-                {{ option.text }}
-            </option>
-        </vui-view>
-    </div>
+  }
 </vui-view>

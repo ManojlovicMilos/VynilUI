@@ -1,13 +1,14 @@
 <vui-view flexDirection="row">
+  @for (option of options; track option) {
     <div
-        class="tab"
-        *ngFor="let option of options"
+      class="tab"
         [ngClass]="{
             'active': option === selectedTab,
             'attached': !standalone,
             'standalone': standalone
         }"
-        (click)="onSelect(option)">
-        {{ option }}
+      (click)="onSelect(option)">
+      {{ option }}
     </div>
+  }
 </vui-view>

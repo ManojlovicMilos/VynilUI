@@ -1,15 +1,19 @@
 <vui-card>
-    <vui-view *ngIf="url" [scrollable]="true" maxHeight="80vh" padding="0.5rem">
+  @if (url) {
+    <vui-view [scrollable]="true" maxHeight="80vh" padding="0.5rem">
+      @if (isImageUrl) {
         <img
-            [src]="sanitizedUrl"
-            *ngIf="isImageUrl"
-            class="ignore_events"
-        />
+          [src]="sanitizedUrl"
+          class="ignore_events"
+          />
+      }
+      @if (!isImageUrl) {
         <iframe
-            [src]="sanitizedUrl"
-            *ngIf="!isImageUrl"
-            title="Character Sheet"
-            class="ignore_events">
+          [src]="sanitizedUrl"
+          title="Character Sheet"
+          class="ignore_events">
         </iframe>
+      }
     </vui-view>
+  }
 </vui-card>

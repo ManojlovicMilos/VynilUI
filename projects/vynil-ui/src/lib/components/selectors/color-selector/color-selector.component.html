@@ -1,9 +1,10 @@
 <vui-view flexDirection="row" columnGap="0.25rem" alignItems="center">
+  @for (color of availableColors; track color) {
     <div
-        (click)="onSelectColor(color)"
-        *ngFor="let color of availableColors"
-        [ngStyle]="{'backgroundColor': color}"
-        [ngClass]="{'selected': selectedColor === color}"
-        class="color">
+      (click)="onSelectColor(color)"
+      [ngStyle]="{'backgroundColor': color}"
+      [ngClass]="{'selected': selectedColor === color}"
+      class="color">
     </div>
+  }
 </vui-view>
