@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { InitialsPipe } from './pipes/initials.pipe';
 
@@ -74,7 +73,6 @@ const Pipes = [
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        BrowserAnimationsModule,
     ],
     exports: [
         ...Pipes,

@@ -1,0 +1,9 @@
+/.git
+/.vscode
+/.angular
+/projects
+/node_modules
+README.md
+angular.json
+tsconfig.json
+package-lock.json

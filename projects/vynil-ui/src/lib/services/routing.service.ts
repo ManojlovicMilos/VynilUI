@@ -11,6 +11,10 @@ export type ParamsData = { [key: string]: string };
 export class RoutingService {
     public queryParams: BehaviorSubject<ParamsData>;
 
+    public get activeRoute(): string {
+        return this.router.url;
+    }
+
     constructor(
         private router: Router,
         private location: Location,
