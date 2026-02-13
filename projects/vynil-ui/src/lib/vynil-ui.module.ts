@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { InitialsPipe } from './pipes/initials.pipe';
+
 import { TextComponent } from './components/basic/text/text.component';
 import { PageComponent } from './components/layout/page/page.component';
 import { ViewComponent } from './components/layout/view/view.component';
@@ -12,8 +15,10 @@ import { ImageComponent } from './components/images/image/image.component';
 import { ModalComponent } from './components/modals/modal/modal.component';
 import { LinkComponent } from './components/navigation/link/link.component';
 import { ButtonComponent } from './components/basic/button/button.component';
+import { DialogComponent } from './components/modals/dialog/dialog.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
+import { MessageComponent } from './components/modals/message/message.component';
 import { IconInputComponent } from './components/inputs/icon-input/icon-input.component';
 import { ColorInputComponent } from './components/inputs/color-input/color-input.component';
 import { ToggleInputComponent } from './components/inputs/toggle-input/toggle-input.component';
@@ -23,8 +28,6 @@ import { ColorSelectorComponent } from './components/selectors/color-selector/co
 import { NavigationLinkComponent } from './components/navigation/navigation-link/navigation-link.component';
 import { ImageArrayInputComponent } from './components/inputs/image-array-input/image-array-input.component';
 import { NavigationGroupComponent } from './components/navigation/navigation-group/navigation-group.component';
-import { MessageComponent } from './components/modals/message/message.component';
-import { DialogComponent } from './components/modals/dialog/dialog.component';
 
 const Components = [
     // Basic
@@ -59,8 +62,13 @@ const Components = [
     ColorSelectorComponent,
 ];
 
+const Pipes = [
+    InitialsPipe,
+];
+
 @NgModule({
     declarations: [
+        ...Pipes,
         ...Components,
     ],
     imports: [
@@ -69,6 +77,7 @@ const Components = [
         BrowserAnimationsModule,
     ],
     exports: [
+        ...Pipes,
         ...Components,
     ]
 })
