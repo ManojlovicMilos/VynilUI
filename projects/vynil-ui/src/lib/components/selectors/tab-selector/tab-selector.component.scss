@@ -1,19 +1,17 @@
-@import '../../../../styles/variables';
-
 .tab {
     display: flex;
     height: 2.5rem;
     padding: 0 1rem;
     align-items: center;
-    background-color: darken($back-color-2, 10%);
+    background-color: var(--vui-color-background-darker);
     cursor: pointer;
 
     &.active {
-        background-color: darken($back-color-2, 5%);
+        background-color: var(--vui-color-background-lighter);
     }
 
     &:hover {
-        background-color: $main-color;
+        background-color: var(--vui-color-primary);
     }
 
     &.attached {

@@ -1,5 +1,3 @@
-@import '../../../../styles/variables';
-
 .size-selector {
     height: 2rem;
     display: flex;
@@ -11,8 +9,8 @@
         align-items: center;
         justify-content: center;
         font-size: 15px;
-        background-color: lighten($back-color-2, 10%);
-        border-right: 1px solid $back-color-2;
+        background-color: var(--vui-color-background-lighter);
+        border-right: 1px solid var(--vui-color-background-darker);
 
         &.longer {
             font-size: 12px;
@@ -32,7 +30,7 @@
         }
 
         &.selected {
-            background-color: lighten($back-color-2, 30%);
+            background-color: var(--vui-color-background-lighter);
         }
     }
 }
