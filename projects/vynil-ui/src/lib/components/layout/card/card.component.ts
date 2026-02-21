@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-export type VynilUICardStyle = 'default' | 'dark' | 'active';
+export type VynilUICardStyle = 'default' | 'dark' | 'active' | 'background';
 
 @Component({
     selector: 'vui-card',

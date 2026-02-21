@@ -7,6 +7,10 @@
         background-color: var(--vui-color-background-darker);
     }
 
+    &.background {
+        background-color: var(--vui-color-background);
+    }
+
     &.border {
         border: var(--vui-variable-border) solid var(--vui-color-primary);
 
