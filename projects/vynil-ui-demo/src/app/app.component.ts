@@ -32,6 +32,7 @@ export class AppComponent {
                 open: true,
                 items: [
                     { label: 'Input', link: 'input' },
+                    { label: 'List Input', link: 'list-input' },
                     { label: 'Select Input', link: 'select-input' },
                     { label: 'Toggle Input', link: 'toggle-input' },
                     { label: 'Color Input', link: 'color-input' },
@@ -49,9 +50,18 @@ export class AppComponent {
             },
             { 
                 name: 'Layout',
+                open: true,
                 items: [
                     { label: 'View', link: 'view' },
                     { label: 'Card', link: 'card' },
+                    { label: 'Named Group', link: 'named-group' },
+                ]
+            },
+            { 
+                name: 'Utility',
+                open: true,
+                items: [
+                    { label: 'Modify Options', link: 'modify-options' },
                 ]
             },
         ]

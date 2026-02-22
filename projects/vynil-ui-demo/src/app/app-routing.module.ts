@@ -11,8 +11,11 @@ import { InputDemoScreenComponent } from './screens/inputs/input-demo-screen/inp
 import { ButtonDemoScreenComponent } from './screens/basic/button-demo-screen/button-demo-screen.component';
 import { DialogDemoScreenComponent } from './screens/modal/dialog-demo-screen/dialog-demo-screen.component';
 import { MessageDemoScreenComponent } from './screens/modal/message-demo-screen/message-demo-screen.component';
+import { ModifyOptionsScreenComponent } from './screens/utility/modify-options-screen/modify-options-screen.component';
+import { ListInputDemoScreenComponent } from './screens/inputs/list-input-demo-screen/list-input-demo-screen.component';
 import { ImageInputDemoScreenComponent } from './screens/inputs/image-input-demo-screen/image-input-demo-screen.component';
 import { ColorInputDemoScreenComponent } from './screens/inputs/color-input-demo-screen/color-input-demo-screen.component';
+import { NamedGroupDemoScreenComponent } from './screens/layout/named-group-demo-screen/named-group-demo-screen.component';
 import { ToggleInputDemoScreenComponent } from './screens/inputs/toggle-input-demo-screen/toggle-input-demo-screen.component';
 import { SelectInputDemoScreenComponent } from './screens/inputs/select-input-demo-screen/select-input-demo-screen.component';
 
@@ -40,6 +43,10 @@ const routes: Routes = [
     {
         path: 'input',
         component: InputDemoScreenComponent,
+    },
+    {
+        path: 'list-input',
+        component: ListInputDemoScreenComponent,
     },
     {
         path: 'toggle-input',
@@ -76,6 +83,14 @@ const routes: Routes = [
     {
         path: 'card',
         component: CardDemoScreenComponent,
+    },
+    {
+        path: 'named-group',
+        component: NamedGroupDemoScreenComponent,
+    },
+    {
+        path: 'modify-options',
+        component: ModifyOptionsScreenComponent,
     }
 ];
 

@@ -18,10 +18,13 @@ import { DialogComponent } from './components/modals/dialog/dialog.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { MessageComponent } from './components/modals/message/message.component';
+import { ListInputComponent } from './components/inputs/list-input/list-input.component';
 import { IconInputComponent } from './components/inputs/icon-input/icon-input.component';
 import { ColorInputComponent } from './components/inputs/color-input/color-input.component';
+import { NamedGroupComponent } from './components/layout/named-group/named-group.component';
 import { ToggleInputComponent } from './components/inputs/toggle-input/toggle-input.component';
 import { SelectInputComponent } from './components/inputs/select-input/select-input.component';
+import { ModifyOptionsComponent } from './components/utility/modify-options/modify-options.component';
 import { ImageURLInputComponent } from './components/inputs/image-url-input/image-url-input.component';
 import { ColorSelectorComponent } from './components/selectors/color-selector/color-selector.component';
 import { NavigationLinkComponent } from './components/navigation/navigation-link/navigation-link.component';
@@ -37,6 +40,7 @@ const Components = [
     IconComponent,
     // Forms
     InputComponent,
+    ListInputComponent,
     IconInputComponent,
     ColorInputComponent,
     SelectInputComponent,
@@ -49,6 +53,7 @@ const Components = [
     PageComponent,
     HeaderComponent,
     SidebarComponent,
+    NamedGroupComponent,
     // Modals
     ModalComponent,
     MessageComponent,
@@ -57,6 +62,8 @@ const Components = [
     LinkComponent,
     NavigationLinkComponent,
     NavigationGroupComponent,
+    // Utility
+    ModifyOptionsComponent,
     // Selectors
     ColorSelectorComponent,
 ];

@@ -1,0 +1,33 @@
+<vui-view rowGap="2rem">
+    <vui-text size="header">Modify Options</vui-text>
+    <vui-card>
+        <vui-view padding="1.5rem" rowGap="1.5rem">
+            <vui-view rowGap="0.75rem" style="width: 100%">
+                <vui-text size="l">Move Only</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="0.25rem">
+                        <vui-modify-options [hasMove]="true" [hasEdit]="false" [hasRemove]="false"></vui-modify-options>
+                    </vui-view>
+                </vui-card>
+                <vui-text size="l">Edit/Copy/Delete</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="0.25rem">
+                        <vui-modify-options [hasCopy]="true"></vui-modify-options>
+                    </vui-view>
+                </vui-card>
+                <vui-text size="l">Full</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="0.25rem">
+                        <vui-modify-options [hasMove]="true" [hasCopy]="true"></vui-modify-options>
+                    </vui-view>
+                </vui-card>
+                <vui-text size="l">Full Inline</vui-text>
+                <vui-card cardStyle="dark">
+                    <vui-view padding="0.25rem">
+                        <vui-modify-options [hasMove]="true" [hasCopy]="true" [isInline]="true"></vui-modify-options>
+                    </vui-view>
+                </vui-card>
+            </vui-view>
+        </vui-view>
+    </vui-card>
+</vui-view>

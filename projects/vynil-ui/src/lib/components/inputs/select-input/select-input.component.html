@@ -3,11 +3,11 @@
     class="current-value"
     (click)="onToggleDropdown()"
     [ngClass]="textSize + (dropdownVisible ? ' open' : '')"
-        [ngStyle]="{
-            'min-width': minWidth,
-            'margin': margin,
-            'padding': padding
-        }">
+    [ngStyle]="{
+        'min-width': minWidth,
+        'margin': margin,
+        'padding': padding
+    }">
     <span>{{ selectedValue?.text || emptyText }}</span>
     <vui-icon
       class="icon"

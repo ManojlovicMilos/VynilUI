@@ -1,0 +1,41 @@
+<vui-card cardStyle="dark">
+  <vui-view
+    [flex]="flex"
+    [width]="width"
+    [height]="height"
+    [margin]="margin"
+    [padding]="padding"
+    [minWidth]="minWidth"
+    [maxWidth]="maxWidth"
+    [scrollable]="true"
+    rowGap="0"
+    alignItems="stretch"
+    justifyContent="flex-start">
+    @if (localValue.length === 0) {
+      <vui-text>{{ emptyText }}</vui-text>  
+    }
+    @for (entry of localValue; track identify($index, entry); let i = $index) {
+      <vui-view padding="0.1rem 0" width="100%" flexDirection="row" minHeight="1.5rem" columnGap="0.5rem" alignItems="center">
+        <vui-view flexDirection="row" columnGap="0.5rem" alignItems="center">
+          @if (showImages && !!entry.image) {
+            <vui-image [url]="entry.image" [height]="imageHeight" [circle]="roundImage"></vui-image>
+          } @else if (showIcons && !!entry.icon) {
+            <vui-icon [icon]="entry.icon" size="medium"></vui-icon>
+          }
+          <vui-text [size]="textSize">{{ entry.text }}</vui-text>
+        </vui-view>
+        @if (hasControls) {
+          <vui-modify-options
+            [isInline]="true"
+            [hasMove]="hasMove"
+            [hasEdit]="hasEdit"
+            [hasCopy]="hasCopy"
+            [hasRemove]="hasRemove"
+            (moved)="onMove(i, $event)"
+            (removed)="onRemove(entry)">
+          </vui-modify-options>
+        }
+      </vui-view>
+    }
+  </vui-view>
+</vui-card>

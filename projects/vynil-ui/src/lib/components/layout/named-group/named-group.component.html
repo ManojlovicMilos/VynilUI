@@ -1,0 +1,8 @@
+<vui-card class="named-group" cardStyle="background" [hasBorder]="true">
+    <vui-view [relative]="true" width="100%">
+        <vui-text class="title" [size]="textSize">{{ name }}</vui-text>
+        <vui-view class="fill content" padding="0.5rem 0 0.25rem 0" rowGap="0.5rem" width="100%">
+            <ng-content></ng-content>
+        </vui-view>
+    </vui-view>
+</vui-card>
