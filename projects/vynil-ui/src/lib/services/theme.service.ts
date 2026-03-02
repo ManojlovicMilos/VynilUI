@@ -29,7 +29,7 @@ const FONT_SIZE_NAMES = ['xs', 's', 'm', 'l', 'xl', 'h3', 'h2', 'h1'];
 const DEFAULT_THEME: Theme = {
     variables: {
         border: 2,
-        radius: 1,
+        radius: 0,
         padding: 1,
         transitionLength: 0.3,
         colorContrastFactor: 10,

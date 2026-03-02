@@ -18,18 +18,18 @@ export { DialogComponent } from './lib/components/modals/dialog/dialog.component
 export { HeaderComponent } from './lib/components/layout/header/header.component';
 export { SidebarComponent } from './lib/components/layout/sidebar/sidebar.component';
 export { MessageComponent } from './lib/components/modals/message/message.component';
-export { ListInputComponent } from './lib/components/inputs/list-input/list-input.component';
 export { IconInputComponent } from './lib/components/inputs/icon-input/icon-input.component';
 export { NamedGroupComponent } from './lib/components/layout/named-group/named-group.component';
 export { ColorInputComponent } from './lib/components/inputs/color-input/color-input.component';
 export { ToggleInputComponent } from './lib/components/inputs/toggle-input/toggle-input.component';
-export { SelectInputComponent } from './lib/components/inputs/select-input/select-input.component';
 export { ModifyOptionsComponent } from './lib/components/utility/modify-options/modify-options.component';
 export { ImageURLInputComponent } from './lib/components/inputs/image-url-input/image-url-input.component';
 export { ColorSelectorComponent } from './lib/components/selectors/color-selector/color-selector.component';
 export { NavigationLinkComponent } from './lib/components/navigation/navigation-link/navigation-link.component';
 export { ImageArrayInputComponent } from './lib/components/inputs/image-array-input/image-array-input.component';
 export { NavigationGroupComponent } from './lib/components/navigation/navigation-group/navigation-group.component';
+export { ListInputComponent, ListInputEntry } from './lib/components/inputs/list-input/list-input.component';
+export { SelectInputComponent, SelectInputOption } from './lib/components/inputs/select-input/select-input.component';
 
 export * from './lib/services/download.service';
 export * from './lib/services/routing.service';

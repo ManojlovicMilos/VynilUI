@@ -1,4 +1,4 @@
-<vui-card cardStyle="dark">
+<vui-card class="list-input" cardStyle="dark">
   <vui-view
     [flex]="flex"
     [width]="width"
@@ -15,7 +15,16 @@
       <vui-text>{{ emptyText }}</vui-text>  
     }
     @for (entry of localValue; track identify($index, entry); let i = $index) {
-      <vui-view padding="0.1rem 0" width="100%" flexDirection="row" minHeight="1.5rem" columnGap="0.5rem" alignItems="center">
+      <vui-view
+        class="entry"
+        width="100%"
+        padding="0.1rem 0"
+        minHeight="1.5rem"
+        columnGap="0.5rem"
+        alignItems="center"
+        flexDirection="row"
+        (click)="onSelectOption(entry)"
+        [ngClass]="{ 'active': selectedValue?.id === entry.id }">
         <vui-view flexDirection="row" columnGap="0.5rem" alignItems="center">
           @if (showImages && !!entry.image) {
             <vui-image [url]="entry.image" [height]="imageHeight" [circle]="roundImage"></vui-image>

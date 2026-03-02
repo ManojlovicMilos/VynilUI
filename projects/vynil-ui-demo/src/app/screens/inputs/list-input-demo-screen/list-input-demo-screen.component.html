@@ -5,7 +5,15 @@
             <vui-view rowGap="0.75rem">
                 <vui-text size="l">List</vui-text>
                 <vui-view flexDirection="row" columnGap="0.75rem" alignItems="center">
-                    <vui-list-input [formControl]="control" [hasControls]="true" width="20rem" [showIcons]="showIconsControl.value" [showImages]="showImagesControl.value"></vui-list-input>
+                    <vui-list-input
+                        [formControl]="control"
+                        [hasControls]="true"
+                        [showIcons]="showIconsControl.value"
+                        [showImages]="showImagesControl.value"
+                        [selectedValue]="selectedEntry"
+                        (selected)="onEntrySelected($event)"
+                        width="20rem">
+                    </vui-list-input>
                 </vui-view>
             </vui-view>
             <vui-view flexDirection="row" alignItems="center" columnGap="0.5rem">
@@ -15,6 +23,9 @@
             <vui-view flexDirection="row" alignItems="center" columnGap="0.5rem">
                 <vui-toggle-input [formControl]="showImagesControl"></vui-toggle-input>
                 <vui-text size="l">Show Images</vui-text>
+            </vui-view>
+            <vui-view flexDirection="row" alignItems="center" columnGap="0.5rem">
+                <vui-button (click)="onAddValue()">Add Value</vui-button>
             </vui-view>
             <vui-view justifyContent="stretch" rowGap="0.75rem" width="100%">
                 <vui-text size="large">Values</vui-text>

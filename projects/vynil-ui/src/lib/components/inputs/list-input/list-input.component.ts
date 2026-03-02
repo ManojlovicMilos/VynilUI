@@ -4,7 +4,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { VynilUITextSize } from '../../basic/text/text.component';
 
-const DEFAULT_PADDING = '0.5rem 0.5rem 0.5rem 1rem';
+const DEFAULT_PADDING = '0.5rem 0';
 const DEFAULT_EMPTY_TEXT = 'None';
 
 export interface ListInputEntry<T> {
@@ -34,6 +34,7 @@ export class ListInputComponent<T> implements ControlValueAccessor {
     @Input() hasEdit: boolean;
     @Input() hasCopy: boolean;
     @Input() hasRemove: boolean;
+    @Input() selectable: boolean;
     @Input() showIcons: boolean;
     @Input() showImages: boolean;
     @Input() roundImage?: boolean;
@@ -71,6 +72,7 @@ export class ListInputComponent<T> implements ControlValueAccessor {
         this.hasEdit = false;
         this.hasCopy = false;
         this.hasRemove = true;
+        this.selectable = true;
         this.showIcons = false;
         this.showImages = false;
         this.flex = 'none';
@@ -121,11 +123,17 @@ export class ListInputComponent<T> implements ControlValueAccessor {
 
     public onRemove(removedEntry: ListInputEntry<T>): void {
         this.removed.emit(removedEntry);
+        if (removedEntry.id === this.selectedValue?.id) {
+            this.selected.emit(null);
+        }
         const newValue = this.localValue.filter((entry: ListInputEntry<T>) => entry.id !== removedEntry.id);
         this.writeValue(newValue);
     }
 
     public onSelectOption(entry: ListInputEntry<T>): void {
+        if (!this.selectable) {
+            return;
+        }
         if (this.selectedValue?.id === entry.id) {
             this.selected.emit(null);
         } else {
