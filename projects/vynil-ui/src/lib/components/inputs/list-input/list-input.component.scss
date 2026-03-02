@@ -1,6 +1,8 @@
 .list-input {
+    overflow: hidden;
+
     .entry {
-        padding: 0 0.5rem 0 1rem;
+        padding: 0 0.5rem 0 0.5rem;
 
         &.active {
             background-color: var(--vui-color-primary-darker);

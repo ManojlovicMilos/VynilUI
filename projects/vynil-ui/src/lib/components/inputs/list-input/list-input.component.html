@@ -12,7 +12,9 @@
     alignItems="stretch"
     justifyContent="flex-start">
     @if (localValue.length === 0) {
-      <vui-text>{{ emptyText }}</vui-text>  
+      <vui-view padding="0.5rem 1rem">
+        <vui-text>{{ emptyText }}</vui-text>  
+      </vui-view>
     }
     @for (entry of localValue; track identify($index, entry); let i = $index) {
       <vui-view
