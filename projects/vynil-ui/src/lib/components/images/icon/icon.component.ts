@@ -1,10 +1,23 @@
 import { Component, Input } from '@angular/core';
 
+const ICON_SIZE_VARIABLES: { [key:string]: string } = {
+    s: 'var(--vui-variable-icon-size-s)',
+    m: 'var(--vui-variable-icon-size-m)',
+    l: 'var(--vui-variable-icon-size-l)',
+    xl: 'var(--vui-variable-icon-size-xl)',
+    small: 'var(--vui-variable-icon-size-s)',
+    button: 'var(--vui-variable-icon-size-button)',
+    medium: 'var(--vui-variable-icon-size-m)',
+    large: 'var(--vui-variable-icon-size-l)',
+    xlarge: 'var(--vui-variable-icon-size-xl)',
+};
+
 export enum VynilUIIconSize {
     Small = 'small',
     Button = 'button',
     Medium = 'medium',
     Large = 'large',
+    ExtraLarge = 'xlarge'
 }
 
 @Component({
@@ -19,6 +32,7 @@ export class IconComponent {
     @Input() color?: string;
     @Input() rotation?: number;
     @Input() disabled?: boolean;
+    @Input() scaleMask?: boolean;
     @Input() actionable?: boolean;
     public IconSizeEnum = VynilUIIconSize;
 
@@ -36,6 +50,9 @@ export class IconComponent {
         }
         styleObject['mask'] = 'url(./assets/icons/' + (this.icon || 'cog') + '.svg)  no-repeat center',
         styleObject['-webkit-mask'] = styleObject['mask'];
+        if (this.scaleMask) {
+            styleObject['mask-size'] = ICON_SIZE_VARIABLES[this.size];
+        }
         return styleObject;
     }
 }

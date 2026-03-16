@@ -7,7 +7,6 @@ export interface Theme {
         radius: number;
         padding: number;
         transitionLength: number;
-        colorContrastFactor: number,
         iconSizes: number[];
         fontSizes: number[];
     };
@@ -18,6 +17,11 @@ export interface Theme {
         background: string;
         boxShadow: string;
     };
+    colorContrastFactor?: {
+        factor?: number;
+        darkenFactor?: number;
+        lightenFactor?: number;
+    };
 }
 
 const UNIT_REM = 'rem';
@@ -26,13 +30,13 @@ const UNIT_SECONDS = 's';
 const UNIT_PERCENTAGE = '%';
 const ICON_SIZE_NAMES = ['s', 'button', 'm', 'l', 'xl'];
 const FONT_SIZE_NAMES = ['xs', 's', 'm', 'l', 'xl', 'h3', 'h2', 'h1'];
+const DEFAULT_FACTOR = 10;
 const DEFAULT_THEME: Theme = {
     variables: {
         border: 2,
         radius: 0,
         padding: 1,
         transitionLength: 0.3,
-        colorContrastFactor: 10,
         iconSizes: [0.75, 0.9, 1.5, 2.75, 5],
         fontSizes: [10, 12, 16, 20, 24, 42, 64, 92],
     },
@@ -43,6 +47,11 @@ const DEFAULT_THEME: Theme = {
         background: '#27272A',
         boxShadow: 'rgba(0, 0, 0, 0.45) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px',
     },
+    colorContrastFactor: {
+        factor: 10,
+        darkenFactor: 10,
+        lightenFactor: 5,
+    }
 }
 
 @Injectable({
@@ -57,11 +66,9 @@ export class ThemeService {
     }
 
     public updateTheme(themeChanges: Partial<Theme>): void {
-        const root = document.querySelector(':root') as HTMLElement;
-        if (root) {
-            this.updateElementTheme(root, themeChanges);
-        }
         this.theme.next({
+            ...this.theme.value,
+            ...themeChanges,
             variables: {
                 ...this.theme.value.variables,
                 ...themeChanges.variables,
@@ -69,8 +76,12 @@ export class ThemeService {
             colors: {
                 ...this.theme.value.colors,
                 ...themeChanges.colors,
-            }
+            },
         });
+        const root = document.querySelector(':root') as HTMLElement;
+        if (root) {
+            this.updateElementTheme(root, themeChanges);
+        }
     }
 
     public updateElementTheme(element: HTMLElement, themeChanges: Partial<Theme>): void {
@@ -121,14 +132,18 @@ export class ThemeService {
             element.style.setProperty('--vui-variable-' + propertyName + '-large', (value * 2) + unit);
             element.style.setProperty('--vui-variable-' + propertyName + '-xl', (value * 4) + unit);
             element.style.setProperty('--vui-variable-' + propertyName + '-extra-large', (value * 4) + unit);
-        }
+        } 
     }
 
     private updateColor(element: HTMLElement, propertyName: string, value: string, skipAlts?: boolean): void {
+        const darkenFactor = this.theme.value.colorContrastFactor?.darkenFactor || this.theme.value.colorContrastFactor?.factor || DEFAULT_FACTOR;
+        const lightenFactor = this.theme.value.colorContrastFactor?.lightenFactor || this.theme.value.colorContrastFactor?.factor || DEFAULT_FACTOR;
         element.style.setProperty('--vui-color-' + propertyName, value);
         if (!skipAlts) {
-            element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 ' + this.theme.value.variables.colorContrastFactor + UNIT_PERCENTAGE);
-            element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF ' + this.theme.value.variables.colorContrastFactor + UNIT_PERCENTAGE);
+            element.style.setProperty('--vui-color-' + propertyName + '-darker', 'color-mix(in srgb,' + value + ',#000 ' + darkenFactor + UNIT_PERCENTAGE);
+            element.style.setProperty('--vui-color-' + propertyName + '-lighter', 'color-mix(in srgb,' + value + ',#FFF ' + lightenFactor+ UNIT_PERCENTAGE);
+            element.style.setProperty('--vui-color-' + propertyName + '-darkest', 'color-mix(in srgb,' + value + ',#000 ' + (darkenFactor * 2) + UNIT_PERCENTAGE);
+            element.style.setProperty('--vui-color-' + propertyName + '-lightest', 'color-mix(in srgb,' + value + ',#FFF ' + (lightenFactor * 2) + UNIT_PERCENTAGE);
         }
     }
 

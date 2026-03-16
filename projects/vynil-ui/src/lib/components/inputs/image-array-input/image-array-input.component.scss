@@ -8,13 +8,14 @@
         ::ng-deep .card {
             border: none;
             max-width: 300px;
-            margin-bottom: 0.5rem;
             min-height: 3.2rem;
             padding: 0.5rem;
         }
 
         .variant {
             position: relative;
+            border-radius: 50%;
+            overflow: hidden;
 
             .icon-float {
                 cursor: pointer;

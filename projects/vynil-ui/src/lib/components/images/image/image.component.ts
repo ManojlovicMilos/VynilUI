@@ -17,6 +17,8 @@ export class ImageComponent {
     @Input() url?: string;
     @Input() width?: string;
     @Input() height?: string;
+    @Input() minWidth?: string;
+    @Input() minHeight?: string;
     @Input() circle?: boolean;
     @Input() border?: string;
     @Input() borderRadius?: string;
@@ -33,8 +35,8 @@ export class ImageComponent {
         let styles: IStyleObject = {
             'width': this.width || DEFAULT_DIMENSION,
             'height': this.height || DEFAULT_DIMENSION,
-            'min-width': this.width || DEFAULT_DIMENSION,
-            'min-height': this.height || DEFAULT_DIMENSION,
+            'min-width': this.minWidth || this.width || DEFAULT_DIMENSION,
+            'min-height': this.minHeight || this.height || DEFAULT_DIMENSION,
         };
         if (this.useBackgroundImage && this.url) {
             styles = {

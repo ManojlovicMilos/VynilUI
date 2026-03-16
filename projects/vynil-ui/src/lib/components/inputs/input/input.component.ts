@@ -8,6 +8,7 @@ import {
     NG_VALUE_ACCESSOR,
     ControlValueAccessor,
 } from '@angular/forms';
+
 import { VynilUITextSize } from '../../basic/text/text.component';
 
 const INPUT_STYLE_INPUTS = [
@@ -95,6 +96,9 @@ export class InputComponent implements ControlValueAccessor {
                 styleObject[propertyName] = componentObject[propertyName];
             }
         });
+        if (this.align) {
+            styleObject['text-align'] = this.align;
+        }
         return styleObject;
     }
 }
